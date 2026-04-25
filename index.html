@@ -1,1 +1,1305 @@
-<h1>hi</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MambaCG creates premium Blender addons, 3D assets, procedural tools, and workflow systems for artists, developers, and studios." />
+  <title>MambaCG - Blender Addons Studio</title>
+  <style>
+    :root {
+      --bg: #f5fbff;
+      --bg-soft: #eef8ff;
+      --text: #0d1b2a;
+      --muted: #5e7183;
+      --line: rgba(90, 141, 183, 0.18);
+      --card: rgba(255, 255, 255, 0.68);
+      --card-strong: rgba(255, 255, 255, 0.86);
+      --blue: #4aa8ff;
+      --cyan: #55d6ff;
+      --violet: #a79cff;
+      --mint: #7ee8c8;
+      --shadow: 0 28px 80px rgba(49, 115, 174, 0.18);
+      --shadow-small: 0 16px 38px rgba(49, 115, 174, 0.12);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --max: 1180px;
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(126, 232, 200, 0.42), transparent 28%),
+        radial-gradient(circle at 85% 0%, rgba(85, 214, 255, 0.48), transparent 30%),
+        radial-gradient(circle at 50% 40%, rgba(167, 156, 255, 0.22), transparent 36%),
+        linear-gradient(180deg, #fafdff 0%, #edf8ff 44%, #ffffff 100%);
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 520px;
+      height: 520px;
+      border-radius: 999px;
+      filter: blur(12px);
+      opacity: 0.42;
+      pointer-events: none;
+      z-index: -1;
+      animation: floatOrb 12s var(--ease) infinite alternate;
+    }
+
+    body::before {
+      left: -240px;
+      top: 160px;
+      background: radial-gradient(circle, rgba(74, 168, 255, 0.44), transparent 68%);
+    }
+
+    body::after {
+      right: -250px;
+      bottom: 120px;
+      background: radial-gradient(circle, rgba(126, 232, 200, 0.46), transparent 68%);
+      animation-delay: -4s;
+    }
+
+    @keyframes floatOrb {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(38px, -34px, 0) scale(1.08); }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .glass {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      box-shadow: var(--shadow-small);
+      backdrop-filter: blur(24px) saturate(1.18);
+      -webkit-backdrop-filter: blur(24px) saturate(1.18);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 14px;
+      z-index: 50;
+      margin-top: 14px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 14px 12px 18px;
+      border-radius: 999px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.95), rgba(255,255,255,.36)),
+        radial-gradient(circle at 30% 20%, var(--cyan), transparent 48%),
+        radial-gradient(circle at 70% 80%, var(--violet), transparent 52%),
+        linear-gradient(135deg, var(--blue), var(--mint));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 12px 24px rgba(54, 137, 213, .22);
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(13, 27, 42, 0.72);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .navlinks a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      transition: background .25s var(--ease), color .25s var(--ease);
+    }
+
+    .navlinks a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,.72);
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #053151;
+      background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(126,232,200,.5));
+      border: 1px solid rgba(255,255,255,.82);
+      box-shadow: 0 10px 26px rgba(30, 146, 219, .16);
+    }
+
+    .hero {
+      position: relative;
+      padding: 86px 0 42px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.84);
+      border-radius: 999px;
+      color: #245b7d;
+      background: rgba(255,255,255,.58);
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 10px 25px rgba(76, 160, 229, .11);
+    }
+
+    .eyebrow span {
+      width: 8px;
+      height: 8px;
+      border-radius: 99px;
+      background: linear-gradient(135deg, var(--blue), var(--mint));
+      box-shadow: 0 0 0 6px rgba(74,168,255,.12);
+    }
+
+    h1 {
+      margin: 22px 0 16px;
+      max-width: 820px;
+      font-size: clamp(48px, 8vw, 94px);
+      line-height: .92;
+      letter-spacing: -0.085em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(110deg, #061526 12%, #2574c7 46%, #42c3ff 68%, #7d6dff 92%);
+      background-size: 170% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shine 7s var(--ease) infinite alternate;
+    }
+
+    @keyframes shine {
+      from { background-position: 0% center; }
+      to { background-position: 100% center; }
+    }
+
+    .lead {
+      max-width: 690px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.58;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 30px 0 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 850;
+      letter-spacing: -0.02em;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, #1686ff, #54d5ff 54%, #8f82ff);
+      box-shadow: 0 18px 38px rgba(39, 139, 226, .28);
+    }
+
+    .btn-soft {
+      color: #17344c;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(255,255,255,.84);
+      box-shadow: 0 14px 34px rgba(73, 124, 169, .12);
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 680px;
+    }
+
+    .metric {
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.58);
+      border: 1px solid rgba(255,255,255,.78);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 24px;
+      letter-spacing: -0.05em;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 650;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 590px;
+      border-radius: 48px;
+      overflow: hidden;
+      background:
+        linear-gradient(160deg, rgba(255,255,255,.92), rgba(239,249,255,.5)),
+        radial-gradient(circle at 20% 10%, rgba(126,232,200,.54), transparent 34%),
+        radial-gradient(circle at 90% 18%, rgba(85,214,255,.54), transparent 32%),
+        radial-gradient(circle at 52% 76%, rgba(167,156,255,.38), transparent 42%);
+      border: 1px solid rgba(255,255,255,.82);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border-radius: 36px;
+      border: 1px solid rgba(255,255,255,.9);
+      pointer-events: none;
+    }
+
+    .device {
+      position: absolute;
+      inset: 70px 34px 74px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+      border-radius: 34px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(255,255,255,.86);
+      box-shadow: 0 34px 90px rgba(35, 100, 169, .20);
+      transform: rotate(-2.5deg);
+    }
+
+    .device-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(83, 135, 179, .12);
+    }
+
+    .dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .dots i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #bfd8ea;
+    }
+
+    .device-title {
+      color: #658299;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .device-content {
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .preview-card {
+      position: relative;
+      min-height: 178px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.76);
+      background: linear-gradient(135deg, rgba(255,255,255,.84), rgba(255,255,255,.26));
+      box-shadow: 0 16px 32px rgba(60, 124, 188, .11);
+    }
+
+    .preview-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--art);
+      opacity: .95;
+      z-index: -1;
+    }
+
+    .preview-card b {
+      font-size: 19px;
+      letter-spacing: -0.04em;
+      color: #09223a;
+    }
+
+    .preview-card span {
+      color: rgba(9,34,58,.64);
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    .floating-pill {
+      position: absolute;
+      z-index: 4;
+      left: 30px;
+      bottom: 34px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      color: #17344c;
+      font-size: 14px;
+      font-weight: 850;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(255,255,255,.9);
+      box-shadow: 0 20px 45px rgba(36, 117, 199, .16);
+      animation: floatPill 6s var(--ease) infinite alternate;
+    }
+
+    .floating-pill i {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--mint));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.62);
+    }
+
+    @keyframes floatPill {
+      from { transform: translate3d(0, 0, 0); }
+      to { transform: translate3d(18px, -12px, 0); }
+    }
+
+    section {
+      padding: 62px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+
+    .section-kicker {
+      color: #2770a8;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 900;
+    }
+
+    h2 {
+      max-width: 760px;
+      margin: 8px 0 0;
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: .98;
+      letter-spacing: -0.075em;
+    }
+
+    .section-desc {
+      max-width: 430px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    .showcase {
+      position: relative;
+      overflow: hidden;
+      border-radius: 44px;
+      background: rgba(255,255,255,.58);
+      border: 1px solid rgba(255,255,255,.86);
+      box-shadow: var(--shadow);
+    }
+
+    .slider {
+      position: relative;
+      min-height: 680px;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 24px;
+      padding: 26px;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(.98);
+      transition: opacity .7s var(--ease), transform .7s var(--ease), visibility .7s;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+
+    .slide-info {
+      position: relative;
+      z-index: 2;
+      min-height: 620px;
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 34px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.58)),
+        radial-gradient(circle at 20% 0%, var(--tone), transparent 40%);
+      border: 1px solid rgba(255,255,255,.86);
+      box-shadow: 0 22px 50px rgba(58, 126, 189, .12);
+    }
+
+    .slide-number {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: rgba(13,27,42,.45);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .slide-info h3 {
+      margin: 26px 0 12px;
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: .96;
+      letter-spacing: -0.07em;
+    }
+
+    .slide-info p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.62;
+      font-weight: 600;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: #245b7d;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(255,255,255,.88);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .slide-media {
+      position: relative;
+      min-height: 620px;
+      overflow: hidden;
+      border-radius: 34px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.16), rgba(255,255,255,.72)),
+        radial-gradient(circle at 30% 10%, var(--tone), transparent 42%),
+        linear-gradient(135deg, #eaf7ff, #ffffff);
+      border: 1px solid rgba(255,255,255,.86);
+      box-shadow: 0 22px 55px rgba(58, 126, 189, .14);
+    }
+
+    .addon-image {
+      position: absolute;
+      inset: 22px;
+      border-radius: 28px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.72)),
+        var(--image),
+        radial-gradient(circle at 20% 12%, var(--tone), transparent 34%),
+        linear-gradient(135deg, #dff4ff, #ffffff 58%, #eef3ff);
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(255,255,255,.9);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 30px 80px rgba(64, 128, 189, .16);
+      overflow: hidden;
+    }
+
+    .addon-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(255,255,255,.78), transparent 36%, transparent 64%, rgba(255,255,255,.5)),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.13) 0 1px, transparent 1px 60px);
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .mock-ui {
+      position: absolute;
+      left: 52px;
+      right: 52px;
+      bottom: 48px;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.76);
+      border: 1px solid rgba(255,255,255,.92);
+      box-shadow: 0 24px 58px rgba(34, 98, 160, .18);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+
+    .mock-title b {
+      display: block;
+      font-size: 15px;
+      letter-spacing: -0.02em;
+    }
+
+    .mock-title span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .mock-button {
+      padding: 10px 13px;
+      border-radius: 999px;
+      color: white;
+      font-size: 13px;
+      font-weight: 850;
+      background: linear-gradient(135deg, #188cff, #6ae6ff);
+    }
+
+    .slider-controls {
+      position: absolute;
+      left: 34px;
+      right: 34px;
+      bottom: 32px;
+      z-index: 8;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .arrows {
+      display: flex;
+      gap: 10px;
+      pointer-events: auto;
+    }
+
+    .arrow {
+      width: 48px;
+      height: 48px;
+      border: 0;
+      cursor: pointer;
+      border-radius: 50%;
+      color: #16344d;
+      background: rgba(255,255,255,.74);
+      box-shadow: 0 14px 34px rgba(44, 102, 163, .14);
+      border: 1px solid rgba(255,255,255,.9);
+      font-size: 22px;
+      transition: transform .25s var(--ease), background .25s var(--ease);
+    }
+
+    .arrow:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.92);
+    }
+
+    .pagination {
+      display: flex;
+      gap: 8px;
+      pointer-events: auto;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      background: rgba(13,27,42,.18);
+      transition: width .25s var(--ease), background .25s var(--ease);
+    }
+
+    .dot.active {
+      width: 34px;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .feature {
+      min-height: 310px;
+      padding: 26px;
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.52)),
+        radial-gradient(circle at 24% 10%, rgba(74,168,255,.18), transparent 38%);
+      border: 1px solid rgba(255,255,255,.86);
+      box-shadow: var(--shadow-small);
+      transition: transform .28s var(--ease), box-shadow .28s var(--ease);
+    }
+
+    .feature:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 20px;
+      margin-bottom: 22px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.9), rgba(255,255,255,.36)),
+        radial-gradient(circle at 28% 20%, var(--cyan), transparent 48%),
+        linear-gradient(135deg, var(--blue), var(--violet));
+      box-shadow: 0 15px 34px rgba(68, 140, 210, .18);
+    }
+
+    .feature h3 {
+      margin: 0 0 10px;
+      font-size: 25px;
+      letter-spacing: -0.055em;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.62;
+      font-weight: 600;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: .84fr 1.16fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .process-card {
+      padding: 34px;
+      border-radius: 34px;
+      background: rgba(255,255,255,.66);
+      border: 1px solid rgba(255,255,255,.86);
+      box-shadow: var(--shadow-small);
+    }
+
+    .process-card h2 {
+      margin-top: 0;
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      padding: 20px;
+      border-radius: 26px;
+      background: rgba(255,255,255,.66);
+      border: 1px solid rgba(255,255,255,.82);
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      color: white;
+      font-weight: 900;
+      background: linear-gradient(135deg, #1686ff, #67dcff);
+      box-shadow: 0 14px 30px rgba(54, 141, 221, .2);
+    }
+
+    .step b {
+      display: block;
+      font-size: 18px;
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+
+    .step span {
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 600;
+    }
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      padding: 56px;
+      border-radius: 44px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,255,255,.5)),
+        radial-gradient(circle at 12% 12%, rgba(126,232,200,.55), transparent 38%),
+        radial-gradient(circle at 88% 16%, rgba(85,214,255,.55), transparent 38%),
+        radial-gradient(circle at 50% 100%, rgba(167,156,255,.34), transparent 42%);
+      border: 1px solid rgba(255,255,255,.9);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .cta h2 {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta p {
+      max-width: 690px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.62;
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 36px 0 48px;
+      color: rgba(13,27,42,.58);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .slide,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 540px;
+      }
+
+      .slide {
+        position: relative;
+        min-height: auto;
+      }
+
+      .slider {
+        min-height: auto;
+      }
+
+      .slide:not(.active) {
+        display: none;
+      }
+
+      .slide-info,
+      .slide-media {
+        min-height: 440px;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .nav {
+        border-radius: 24px;
+        align-items: flex-start;
+      }
+
+      .navlinks {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 460px;
+        border-radius: 34px;
+      }
+
+      .device {
+        inset: 54px 18px 72px;
+      }
+
+      .device-content {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-card:nth-child(n+3) {
+        display: none;
+      }
+
+      .slide {
+        padding: 14px;
+      }
+
+      .slide-info,
+      .slide-media {
+        min-height: auto;
+        padding: 24px;
+        border-radius: 26px;
+      }
+
+      .slide-media {
+        height: 390px;
+      }
+
+      .addon-image {
+        inset: 14px;
+        border-radius: 22px;
+      }
+
+      .mock-ui {
+        left: 28px;
+        right: 28px;
+        bottom: 28px;
+        grid-template-columns: 1fr;
+      }
+
+      .slider-controls {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        padding: 0 18px 20px;
+      }
+
+      .cta {
+        padding: 34px 20px;
+        border-radius: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar wrap">
+    <nav class="nav glass" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="MambaCG home">
+        <span class="logo" aria-hidden="true"></span>
+        <span>MambaCG</span>
+      </a>
+
+      <div class="navlinks">
+        <a href="#addons">Addons</a>
+        <a href="#craft">Craft</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a class="nav-cta" href="https://superhivemarket.com/creators/mambacg" target="_blank" rel="noreferrer">View Store</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-grid">
+        <div class="hero-copy reveal visible">
+          <div class="eyebrow"><span></span>Blender addons, tools, and 3D systems</div>
+          <h1><span class="gradient-text">Premium Blender tools for faster cinematic creation.</span></h1>
+          <p class="lead">MambaCG builds custom Blender addons, procedural workflows, 3D assets, and visual tools for artists who want to move from empty scene to polished result with less friction.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#addons">Explore Addons</a>
+            <a class="btn btn-soft" href="https://bio.site/mambacg" target="_blank" rel="noreferrer">About MambaCG</a>
+          </div>
+          <div class="metrics" aria-label="Studio focus metrics">
+            <div class="metric">
+              <strong>Blender</strong>
+              <span>Tools designed directly for real 3D production workflows.</span>
+            </div>
+            <div class="metric">
+              <strong>Python</strong>
+              <span>Automation, UI panels, workflow logic, and custom operators.</span>
+            </div>
+            <div class="metric">
+              <strong>3D</strong>
+              <span>Environments, assets, animation, lighting, and render systems.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal visible" aria-hidden="true">
+          <div class="device">
+            <div class="device-bar">
+              <div class="dots"><i></i><i></i><i></i></div>
+              <div class="device-title">MambaCG Addon Studio</div>
+            </div>
+            <div class="device-content">
+              <div class="preview-card" style="--art: radial-gradient(circle at 30% 22%, rgba(74,168,255,.55), transparent 34%), linear-gradient(135deg, #dff5ff, #ffffff);">
+                <b>Scene Ready</b><span>cleanup and export</span>
+              </div>
+              <div class="preview-card" style="--art: radial-gradient(circle at 68% 30%, rgba(126,232,200,.58), transparent 36%), linear-gradient(135deg, #effcff, #ffffff);">
+                <b>Quick Water</b><span>ocean and water FX</span>
+              </div>
+              <div class="preview-card" style="--art: radial-gradient(circle at 40% 25%, rgba(167,156,255,.48), transparent 36%), linear-gradient(135deg, #f4f5ff, #ffffff);">
+                <b>HDRI Sky Pro</b><span>lighting environments</span>
+              </div>
+              <div class="preview-card" style="--art: radial-gradient(circle at 64% 22%, rgba(85,214,255,.5), transparent 36%), linear-gradient(135deg, #eaf9ff, #ffffff);">
+                <b>Auto Render Pro</b><span>render automation</span>
+              </div>
+            </div>
+          </div>
+          <div class="floating-pill"><i></i>Designed for artists. Built like software.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="addons" class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Featured Addons</div>
+          <h2>Aqua-style product showcase with your addon artwork.</h2>
+        </div>
+        <p class="section-desc">Replace the image paths inside the JavaScript array with your real addon screenshots, covers, GIF previews, or product renders.</p>
+      </div>
+
+      <div class="showcase reveal">
+        <div class="slider" id="addonSlider" aria-label="MambaCG addon slider"></div>
+        <div class="slider-controls">
+          <div class="arrows">
+            <button class="arrow" type="button" id="prevSlide" aria-label="Previous addon">‹</button>
+            <button class="arrow" type="button" id="nextSlide" aria-label="Next addon">›</button>
+          </div>
+          <div class="pagination" id="sliderDots" aria-label="Slider pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="craft" class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Why it feels premium</div>
+          <h2>Built around speed, clarity, and beautiful results.</h2>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <article class="feature reveal">
+          <div class="feature-icon"></div>
+          <h3>Production-first design</h3>
+          <p>Every tool is positioned as a practical shortcut for artists: fewer repetitive steps, cleaner panels, and faster decisions inside Blender.</p>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-icon"></div>
+          <h3>Visual workflow systems</h3>
+          <p>Sky, water, render, asset, lighting, cleanup, and scene tools are presented as one professional ecosystem instead of separate small scripts.</p>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-icon"></div>
+          <h3>Studio-level presentation</h3>
+          <p>The page uses soft reflections, glass panels, large product visuals, and smooth motion to make the brand feel like a serious software studio.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="workflow" class="wrap">
+      <div class="process">
+        <div class="process-card reveal">
+          <div class="section-kicker">Workflow</div>
+          <h2>From idea to finished scene.</h2>
+          <p class="section-desc">The landing page sells the main idea clearly: MambaCG creates Blender tools that save time and unlock new creative possibilities.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://superhivemarket.com/creators/mambacg" target="_blank" rel="noreferrer">Open Superhive Store</a>
+          </div>
+        </div>
+
+        <div class="steps reveal">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div><b>Choose the scene system</b><span>Lighting, sky, water, cleanup, render automation, assets, or procedural environment tools.</span></div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div><b>Apply ready-made controls</b><span>Use artist-friendly panels, presets, and operators instead of rebuilding workflows by hand.</span></div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div><b>Customize and render</b><span>Adjust the result for your project, then move faster toward final shots, animations, or client work.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="wrap">
+      <div class="cta reveal">
+        <div class="section-kicker">MambaCG</div>
+        <h2>Custom Blender tools for creators who want better workflows.</h2>
+        <p>For collaborations, custom projects, addon support, or product questions, contact MambaCG through the public profile or store page.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn btn-primary" href="https://bio.site/mambacg" target="_blank" rel="noreferrer">Open Bio</a>
+          <a class="btn btn-soft" href="https://superhivemarket.com/creators/mambacg" target="_blank" rel="noreferrer">View Products</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer-row">
+      <span>© <span id="year"></span> MambaCG. Premium Blender addon studio.</span>
+      <span>Light Aqua landing page template.</span>
+    </div>
+  </footer>
+
+  <script>
+    const addons = [
+      {
+        title: "Scene Ready",
+        label: "Blender Scene Cleanup & Export Ready",
+        description: "A practical scene preparation system for cleanup, checking, export readiness, reporting, and organized production workflows.",
+        tags: ["Scene cleanup", "Export ready", "QA workflow"],
+        image: "assets/addons/scene-ready.jpg",
+        tone: "rgba(74, 168, 255, 0.36)"
+      },
+      {
+        title: "Quick Water - Ocean FX",
+        label: "Water, waves, foam, and cinematic ocean tools",
+        description: "A visual water toolkit for faster creation of ocean surfaces, wave setups, foam details, and animated water-based scenes.",
+        tags: ["Water FX", "Ocean", "Foam"],
+        image: "assets/addons/quick-water-oceanfx.jpg",
+        tone: "rgba(85, 214, 255, 0.38)"
+      },
+      {
+        title: "HDRI Sky Pro",
+        label: "Lighting and HDRI environment workflow",
+        description: "A focused environment lighting tool for artists who want better mood, faster look development, and easier sky-based lighting control.",
+        tags: ["HDRI", "Lighting", "Lookdev"],
+        image: "assets/addons/hdri-sky-pro.jpg",
+        tone: "rgba(167, 156, 255, 0.34)"
+      },
+      {
+        title: "Quick Sky Pro",
+        label: "Procedural clouds and customizable sky controls",
+        description: "A Blender addon concept focused on realistic, customizable cloud creation with presets and direct artist controls for sky scenes.",
+        tags: ["Clouds", "Atmosphere", "Presets"],
+        image: "assets/addons/quick-sky-pro.jpg",
+        tone: "rgba(126, 232, 200, 0.34)"
+      },
+      {
+        title: "Auto Render Pro",
+        label: "Render automation for repeatable output",
+        description: "A compact production helper for faster render setup, repeatable output, and cleaner automation when working across Blender projects.",
+        tags: ["Rendering", "Automation", "Batch work"],
+        image: "assets/addons/auto-render-pro.jpg",
+        tone: "rgba(74, 168, 255, 0.34)"
+      },
+      {
+        title: "Quick Mushrooms",
+        label: "Nature assets for stylized and cinematic scenes",
+        description: "A nature-focused product for enriching environments with organic details, fantasy accents, and fast scene decoration.",
+        tags: ["Nature", "Assets", "Environment"],
+        image: "assets/addons/quick-mushrooms.jpg",
+        tone: "rgba(126, 232, 200, 0.36)"
+      }
+    ];
+
+    const slider = document.querySelector("#addonSlider");
+    const dots = document.querySelector("#sliderDots");
+    const prev = document.querySelector("#prevSlide");
+    const next = document.querySelector("#nextSlide");
+    let current = 0;
+    let timer;
+
+    function buildSlider() {
+      slider.innerHTML = addons.map((addon, index) => `
+        <article class="slide ${index === 0 ? "active" : ""}" style="--tone:${addon.tone};">
+          <div class="slide-info">
+            <div>
+              <div class="slide-number"><span>0${index + 1}</span><span>${addons.length < 10 ? "0" + addons.length : addons.length}</span></div>
+              <h3>${addon.title}</h3>
+              <p>${addon.description}</p>
+              <div class="tags">${addon.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
+            </div>
+            <a class="btn btn-soft" href="https://superhivemarket.com/creators/mambacg" target="_blank" rel="noreferrer">View on Superhive</a>
+          </div>
+          <div class="slide-media">
+            <div class="addon-image" style="--image:url('${addon.image}');"></div>
+            <div class="mock-ui">
+              <div class="mock-title"><b>${addon.title}</b><span>${addon.label}</span></div>
+              <div class="mock-button">Blender Tool</div>
+            </div>
+          </div>
+        </article>
+      `).join("");
+
+      dots.innerHTML = addons.map((_, index) => `
+        <button class="dot ${index === 0 ? "active" : ""}" type="button" aria-label="Go to slide ${index + 1}"></button>
+      `).join("");
+
+      dots.querySelectorAll(".dot").forEach((dot, index) => {
+        dot.addEventListener("click", () => goToSlide(index));
+      });
+    }
+
+    function updateSlider() {
+      document.querySelectorAll(".slide").forEach((slide, index) => {
+        slide.classList.toggle("active", index === current);
+      });
+
+      document.querySelectorAll(".dot").forEach((dot, index) => {
+        dot.classList.toggle("active", index === current);
+      });
+    }
+
+    function goToSlide(index) {
+      current = (index + addons.length) % addons.length;
+      updateSlider();
+      restartAutoplay();
+    }
+
+    function nextSlide() {
+      goToSlide(current + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(current - 1);
+    }
+
+    function startAutoplay() {
+      timer = window.setInterval(() => {
+        current = (current + 1) % addons.length;
+        updateSlider();
+      }, 5200);
+    }
+
+    function restartAutoplay() {
+      window.clearInterval(timer);
+      startAutoplay();
+    }
+
+    buildSlider();
+    startAutoplay();
+
+    next.addEventListener("click", nextSlide);
+    prev.addEventListener("click", prevSlide);
+
+    slider.addEventListener("mouseenter", () => window.clearInterval(timer));
+    slider.addEventListener("mouseleave", startAutoplay);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight") nextSlide();
+      if (event.key === "ArrowLeft") prevSlide();
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
