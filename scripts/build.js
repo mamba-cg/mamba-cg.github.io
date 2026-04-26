@@ -122,10 +122,10 @@ function build() {
     outputPath: "index.html",
     productSchema,
     seo: {
-      title: "Mamba CG Blender Addons - Quick Water, HDRI Sky Pro, Quick Sky Pro",
-      description: "Minimal Blender addons by Mamba CG for water, HDRI lighting and animated skies. Explore Quick Water - Ocean FX, HDRI Sky Pro and Quick Sky Pro on Superhive.",
-      ogTitle: "Mamba CG Blender Addons",
-      ogDescription: "Focused Blender addons for water, HDRI lighting and animated skies: Quick Water - Ocean FX, HDRI Sky Pro and Quick Sky Pro.",
+      title: "Blender Addons for Lighting, Sky and Water - MambaCG",
+      description: "Professional Blender addons for lighting, sky and water. Save time and create cinematic scenes faster.",
+      ogTitle: "Blender Addons for Lighting, Sky and Water - MambaCG",
+      ogDescription: "Professional Blender addons for lighting, sky and water. Save time and create cinematic scenes faster.",
       canonicalUrl: "https://mamba-cg.github.io/"
     },
     mainContent: indexContent
