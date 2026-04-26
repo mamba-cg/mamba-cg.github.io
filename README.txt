@@ -2,14 +2,14 @@ MambaCG Landing Site
 
 Files:
 - index.html - main landing page
-- css/styles.css - full visual style in MambaCG red and graphite palette
-- js/main.js - slider, autoplay, navigation, reveal animations
-- assets/logo/mambacg-logo.png - logo from the provided image
-- assets/addons/*.svg - editable placeholder addon images
+- css-template/styles.css - full visual style in MambaCG red and graphite palette
+- js-template/main.js - slider, autoplay, navigation, reveal animations
+- assets-template/logo/mambacg-logo.png - logo from the provided image
+- assets-template/addons/*.svg - editable placeholder addon images
 
 How to replace addon images:
-1. Put your real product images into assets/addons.
-2. Open js/main.js.
+1. Put your real product images into assets-template/addons.
+2. Open js-template/main.js.
 3. Replace the image paths in the addons array.
 
 Recommended image ratio for slider:

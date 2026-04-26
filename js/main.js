@@ -6,7 +6,7 @@ const addons = [
     label: "Scene cleanup and export workflow",
     description: "Prepare Blender scenes for production with cleanup, checking, organization, and export-readiness workflows.",
     tags: ["Scene cleanup", "Export ready", "QA workflow"],
-    image: "assets/addons/scene-ready.svg",
+    image: "assets-template/addons/scene-ready.svg",
     tone: "rgba(227, 29, 35, 0.22)"
   },
   {
@@ -14,7 +14,7 @@ const addons = [
     label: "Water, waves, foam, and cinematic ocean tools",
     description: "Create water surfaces, ocean looks, wave motion, and foam details with a faster artist-facing setup.",
     tags: ["Water FX", "Ocean", "Foam"],
-    image: "assets/addons/quick-water-oceanfx.svg",
+    image: "assets-template/addons/quick-water-oceanfx.svg",
     tone: "rgba(31, 44, 59, 0.18)"
   },
   {
@@ -22,7 +22,7 @@ const addons = [
     label: "HDRI environment lighting workflow",
     description: "Speed up environment lighting and look development with sky-based controls for cinematic scenes.",
     tags: ["HDRI", "Lighting", "Lookdev"],
-    image: "assets/addons/hdri-sky-pro.svg",
+    image: "assets-template/addons/hdri-sky-pro.svg",
     tone: "rgba(255, 90, 95, 0.20)"
   },
   {
@@ -30,7 +30,7 @@ const addons = [
     label: "Procedural clouds and sky controls",
     description: "Build customizable skies and cloud moods through direct controls and reusable presets.",
     tags: ["Clouds", "Atmosphere", "Presets"],
-    image: "assets/addons/quick-sky-pro.svg",
+    image: "assets-template/addons/quick-sky-pro.svg",
     tone: "rgba(227, 29, 35, 0.18)"
   },
   {
@@ -38,15 +38,15 @@ const addons = [
     label: "Render automation for repeatable output",
     description: "Automate render setup and repeatable output tasks when moving across Blender projects.",
     tags: ["Rendering", "Automation", "Batch work"],
-    image: "assets/addons/auto-render-pro.svg",
+    image: "assets-template/addons/auto-render-pro.svg",
     tone: "rgba(31, 44, 59, 0.16)"
   },
   {
     title: "Quick Mushrooms",
-    label: "Nature assets for stylized and cinematic scenes",
+    label: "Nature assets-template for stylized and cinematic scenes",
     description: "Add organic details, fantasy accents, and natural set dressing to environment scenes faster.",
-    tags: ["Nature", "Assets", "Environment"],
-    image: "assets/addons/quick-mushrooms.svg",
+    tags: ["Nature", "assets-template", "Environment"],
+    image: "assets-template/addons/quick-mushrooms.svg",
     tone: "rgba(255, 90, 95, 0.17)"
   },
   {
@@ -54,7 +54,7 @@ const addons = [
     label: "Focused lighting controls for Blender scenes",
     description: "Manage scene lighting direction, setup choices, and production adjustments from a cleaner workflow layer.",
     tags: ["Lighting", "Control", "Cinematic"],
-    image: "assets/addons/light-master-pro.svg",
+    image: "assets-template/addons/light-master-pro.svg",
     tone: "rgba(227, 29, 35, 0.20)"
   },
   {
@@ -62,7 +62,7 @@ const addons = [
     label: "Atmospheric depth and fog workflow",
     description: "Add fog, haze, and cinematic depth to scenes with practical controls for atmosphere-driven shots.",
     tags: ["Fog", "Atmosphere", "Depth"],
-    image: "assets/addons/easy-fog.svg",
+    image: "assets-template/addons/easy-fog.svg",
     tone: "rgba(31, 44, 59, 0.17)"
   }
 ];
@@ -70,7 +70,7 @@ const addons = [
 const workflowTabs = {
   choose: {
     title: "Choose",
-    text: "Select a tool for sky, water, lighting, scene cleanup, render automation, or environment assets based on the shot you are building.",
+    text: "Select a tool for sky, water, lighting, scene cleanup, render automation, or environment assets-template based on the shot you are building.",
     label: "Choose the production tool",
     art: "radial-gradient(circle at 24% 22%, rgba(227,29,35,.26), transparent 30%), radial-gradient(circle at 72% 24%, rgba(31,44,59,.18), transparent 28%)"
   },
@@ -94,7 +94,7 @@ const workflowTabs = {
   },
   export: {
     title: "Export",
-    text: "Prepare scenes, reports, assets, or final outputs with a workflow mindset that keeps handoff and reuse clearer.",
+    text: "Prepare scenes, reports, assets-template, or final outputs with a workflow mindset that keeps handoff and reuse clearer.",
     label: "Prepare final output",
     art: "linear-gradient(135deg, rgba(31,44,59,.18), transparent 44%), radial-gradient(circle at 30% 70%, rgba(227,29,35,.24), transparent 28%)"
   }
