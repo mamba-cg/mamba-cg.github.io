@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Quick Water - Ocean FX",
+    "shortName": "Quick Water",
+    "type": "Water addon",
+    "url": "https://superhivemarket.com/products/quick-oceanfx",
+    "image": "https://assets.superhivemarket.com/store/product/247978/image/xlarge_og-a7e738b32976fe6f998a5eb26d4dfd2c.jpg",
+    "fallback": "assets/products/quick-water-oceanfx.svg",
+    "description": "Create realistic oceans, waves, pools, baths, fountains and small water surfaces with a clean Blender workflow.",
+    "schemaDescription": "Blender addon for oceans, waves, pools, baths, fountains and small water surfaces.",
+    "tags": ["Oceans", "Pools", "Water FX"]
+  },
+  {
+    "name": "HDRI Sky Pro",
+    "shortName": "HDRI Sky Pro",
+    "type": "HDRI lighting addon",
+    "url": "https://superhivemarket.com/products/hdri-sky-pro",
+    "image": "https://assets.superhivemarket.com/store/product/245259/image/xlarge_og-065878050a369033ee05404032fb5843.jpg",
+    "fallback": "assets/products/hdri-sky-pro.svg",
+    "description": "Browse HDRI previews inside Blender, create worlds and skies, and combine HDRI lighting with cloud presets.",
+    "schemaDescription": "Blender addon for HDRI previews, world creation and HDRI lighting workflows.",
+    "tags": ["HDRI", "Lighting", "Clouds"]
+  },
+  {
+    "name": "Quick Sky Pro",
+    "shortName": "Quick Sky Pro",
+    "type": "Sky and clouds addon",
+    "url": "https://superhivemarket.com/products/quick-sky-pro",
+    "image": "https://assets.superhivemarket.com/store/product/226156/image/xlarge_og-24c94043ca708249bcd406542b34100d.jpg",
+    "fallback": "assets/products/quick-sky-pro.svg",
+    "description": "Use animated cloud presets, wind controls and cloud layers to build atmospheric Blender skies faster.",
+    "schemaDescription": "Blender addon for animated cloud presets, atmospheric skies and cloud layer controls.",
+    "tags": ["Clouds", "Atmosphere", "Presets"]
+  }
+]
