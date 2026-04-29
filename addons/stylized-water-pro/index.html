@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stylized Water Pro - Blender Addon</title>
+  <meta name="description" content="Stylized Water Pro is a one-click stylized water system for Blender with shader material, Geometry Nodes, foam, ripples, floating objects and presets.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="swp-page" id="top">
+    <header class="swp-nav" aria-label="Page navigation">
+      <a class="swp-logo" href="#top" aria-label="Stylized Water Pro home">
+        <span class="swp-logo-mark">SWP</span>
+        <span>Stylized Water Pro</span>
+      </a>
+      <nav class="swp-nav-links" aria-label="Section links">
+        <a href="#features">Features</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#media">Media</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="swp-hero section-reveal">
+        <div class="swp-hero-copy">
+          <span class="swp-eyebrow">Blender addon - one-click water system</span>
+          <h1>Stylized water without rebuilding complex nodes.</h1>
+          <p class="swp-lead">Create animated stylized water in Blender with a ready-made water object, shader material, Geometry Nodes setup, helper collections and presets.</p>
+          <div class="swp-actions">
+            <a class="btn btn-primary" href="#workflow">See workflow</a>
+            <a class="btn btn-ghost" href="#media">View media plan</a>
+          </div>
+          <div class="swp-pill-row" aria-label="Main product benefits">
+            <span>One-click setup</span>
+            <span>Geometry Nodes</span>
+            <span>Foam and ripples</span>
+            <span>Floating objects</span>
+          </div>
+        </div>
+
+        <div class="media-card media-card-hero" data-media="hero">
+          <div>
+            <small>Hero video or animated GIF</small>
+            <strong>Show the final water render</strong>
+            <p>Use a short looping GIF/video: moving waves, foam around objects, ripple points and floating objects in one clean scene.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="swp-proof section-reveal" aria-label="Key proof points">
+        <article>
+          <span>01</span>
+          <h2>Automatic Setup</h2>
+          <p>Creates or reuses the water object, assigns the water material, adds Geometry Nodes modifiers and builds the helper collections.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>Object Interaction</h2>
+          <p>Use Static_Objects, Floating_Objects and Ripple_Points to organize foam, floating and ripple behavior in the scene.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>Preset Workflow</h2>
+          <p>Start from built-in looks and save custom presets for repeated stylized water setups.</p>
+        </article>
+      </section>
+
+      <section class="swp-section section-reveal" id="overview">
+        <div class="section-head">
+          <div>
+            <span class="swp-eyebrow">What it does</span>
+            <h2>A complete water setup in one panel.</h2>
+          </div>
+          <p>Stylized Water Pro builds a full water system from bundled assets: water object, water material, Geometry Nodes wave setup, collection bindings and scene-level controls in the 3D View sidebar.</p>
+        </div>
+
+        <div class="overview-grid">
+          <div class="overview-card dark-card">
+            <span>Core pipeline</span>
+            <h3>Create water, assign material, connect nodes.</h3>
+            <p>The addon is designed as an artist workflow: click, add objects to collections, adjust controls, render.</p>
+          </div>
+          <div class="overview-list">
+            <div><b>Water Object</b><span>SWP_Water system object</span></div>
+            <div><b>Shader Material</b><span>Stylized surface, foam and depth look</span></div>
+            <div><b>Geometry Nodes</b><span>Wave 1, Wave 2 and interaction inputs</span></div>
+            <div><b>Collections</b><span>Static, Floating and Ripple workflows</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="swp-section section-reveal" id="features">
+        <div class="section-head">
+          <div>
+            <span class="swp-eyebrow">Key features</span>
+            <h2>Everything needed for stylized water scenes.</h2>
+          </div>
+          <p>Use the page blocks below as feature cards. Replace the placeholders with product renders, UI screenshots or short GIFs.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card" data-feature="water-object">
+            <span class="card-num">01</span>
+            <h3>Water Object</h3>
+            <p>Create or reuse the SWP_Water object and keep the water system organized in your scene.</p>
+          </article>
+          <article class="feature-card" data-feature="shader">
+            <span class="card-num">02</span>
+            <h3>Stylized Shader</h3>
+            <p>Ready material for stylized surface color, foam, volume-style depth, refraction look and caustic-style detail.</p>
+          </article>
+          <article class="feature-card" data-feature="waves">
+            <span class="card-num">03</span>
+            <h3>Geometry Nodes Waves</h3>
+            <p>Layered wave controls are handled through Geometry Nodes modifiers, including Wave 1 and Wave 2.</p>
+          </article>
+          <article class="feature-card" data-feature="foam">
+            <span class="card-num">04</span>
+            <h3>Foam Workflow</h3>
+            <p>Add objects to Static_Objects to drive contact-style water interaction and foam around scene objects.</p>
+          </article>
+          <article class="feature-card" data-feature="ripples">
+            <span class="card-num">05</span>
+            <h3>Ripples</h3>
+            <p>Add selected objects or ripple proxies to Ripple_Points to create localized ripple effects in the water setup.</p>
+          </article>
+          <article class="feature-card" data-feature="floating">
+            <span class="card-num">06</span>
+            <h3>Floating Objects</h3>
+            <p>Use Floating_Objects for objects that need water-based motion controllers and natural floating behavior.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="swp-section workflow-section section-reveal" id="workflow">
+        <div class="section-head">
+          <div>
+            <span class="swp-eyebrow">How it works</span>
+            <h2>From empty scene to stylized water.</h2>
+          </div>
+          <p>The workflow is designed for artists: create the system, add objects to the right collection, choose a preset and adjust the controls.</p>
+        </div>
+
+        <div class="workflow-tabs" role="tablist" aria-label="Workflow steps">
+          <button class="tab-button is-active" type="button" role="tab" aria-selected="true" data-tab="step-1">1. Create</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="step-2">2. Add objects</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="step-3">3. Preset</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="step-4">4. Render</button>
+        </div>
+
+        <div class="workflow-panels">
+          <article class="workflow-panel is-active" id="step-1">
+            <div>
+              <span>Step 1</span>
+              <h3>Create Stylized Water</h3>
+              <p>Click one button to create the water object, material, Geometry Nodes setup and required collections.</p>
+            </div>
+            <div class="media-card compact"><strong>Image/GIF:</strong><p>Show the Create Stylized Water button and the generated SWP_Water object.</p></div>
+          </article>
+          <article class="workflow-panel" id="step-2">
+            <div>
+              <span>Step 2</span>
+              <h3>Add objects to collections</h3>
+              <p>Use Static, Floating or Ripple buttons to place selected objects into the correct water workflow.</p>
+            </div>
+            <div class="media-card compact"><strong>Image/GIF:</strong><p>Show selected objects moving into Static_Objects, Floating_Objects and Ripple_Points.</p></div>
+          </article>
+          <article class="workflow-panel" id="step-3">
+            <div>
+              <span>Step 3</span>
+              <h3>Choose a preset</h3>
+              <p>Apply a built-in look or save your own custom water preset for later scenes.</p>
+            </div>
+            <div class="media-card compact"><strong>Image/GIF:</strong><p>Show fast switching between several water looks.</p></div>
+          </article>
+          <article class="workflow-panel" id="step-4">
+            <div>
+              <span>Step 4</span>
+              <h3>Adjust and render</h3>
+              <p>Fine tune waves, surface, foam, ripples, floating and volume settings from the sidebar.</p>
+            </div>
+            <div class="media-card compact"><strong>Image/GIF:</strong><p>Show before/after render or final cinematic water shot.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="swp-section media-section section-reveal" id="media">
+        <div class="section-head">
+          <div>
+            <span class="swp-eyebrow">Media plan</span>
+            <h2>Use visual proof instead of long text.</h2>
+          </div>
+          <p>These placeholders are ready for your screenshots, videos and animated GIFs. Keep each media item short and focused.</p>
+        </div>
+
+        <div class="media-grid">
+          <div class="media-card large"><small>Main overview video</small><strong>Full product workflow</strong><p>Empty scene, click Create Stylized Water, generated system, add object, show foam/ripple/floating, change preset and final render.</p></div>
+          <div class="media-card"><small>UI screenshot</small><strong>3D View sidebar</strong><p>Show Main Setup, Presets, Waves, Surface, Foam, Ripples, Floating and Volume sections.</p></div>
+          <div class="media-card"><small>Foam/ripple GIF</small><strong>Object interaction</strong><p>Show static object foam and visible ripple points on the water surface.</p></div>
+          <div class="media-card dark"><small>Floating GIF</small><strong>Floating object motion</strong><p>Show a leaf, rock, boat or simple prop moving naturally on the water surface.</p></div>
+        </div>
+      </section>
+
+      <section class="swp-section included-section section-reveal">
+        <div class="included-grid">
+          <article>
+            <span class="swp-eyebrow">What's included</span>
+            <h2>Product package</h2>
+            <ul>
+              <li>Blender addon for Stylized Water Pro</li>
+              <li>Bundled asset file: Water_Surface_MambaCG.blend</li>
+              <li>Ready-made water object setup</li>
+              <li>Stylized water shader material</li>
+              <li>Geometry Nodes wave setup</li>
+              <li>Static, Floating and Ripple collection workflow</li>
+              <li>Built-in presets and custom preset support</li>
+              <li>Sample world/HDRI workflow if included in your product package</li>
+            </ul>
+          </article>
+          <article>
+            <span class="swp-eyebrow">Best for</span>
+            <h2>Use cases</h2>
+            <ul>
+              <li>Stylized lakes and ponds</li>
+              <li>Fantasy water scenes</li>
+              <li>Game-style environments</li>
+              <li>Low-poly and stylized worlds</li>
+              <li>Animated water backgrounds</li>
+              <li>Scene presentation renders</li>
+              <li>Artists who want a ready water system instead of building nodes manually</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="swp-section notes-section section-reveal">
+        <div class="section-head">
+          <div>
+            <span class="swp-eyebrow">Compatibility and notes</span>
+            <h2>Designed for practical Blender workflow.</h2>
+          </div>
+          <p>Performance depends on water size, subdivision, scene complexity and object interaction. Use lighter settings while editing and increase quality for final renders.</p>
+        </div>
+        <div class="note-grid">
+          <article><span>Version</span><h3>Blender version</h3><p>Add your exact supported Blender version here before publishing. Example: Blender 4.x.</p></article>
+          <article><span>Render</span><h3>Eevee / Cycles</h3><p>List only the render engines you tested. Add screenshots for both if both are supported.</p></article>
+          <article><span>Assets</span><h3>Bundled blend file</h3><p>The addon uses Water_Surface_MambaCG.blend. Keep it inside the assets folder.</p></article>
+        </div>
+      </section>
+
+      <section class="swp-section faq-section section-reveal" id="faq">
+        <div class="section-head">
+          <div>
+            <span class="swp-eyebrow">FAQ</span>
+            <h2>Common questions.</h2>
+          </div>
+          <p>Short buyer-focused answers for installation, collections, foam, ripples, floating objects and presets.</p>
+        </div>
+
+        <div class="faq-list">
+          <details open>
+            <summary>How do I start?</summary>
+            <p>Install and enable the addon, open the 3D View sidebar, then click Create Stylized Water.</p>
+          </details>
+          <details>
+            <summary>What does the button create?</summary>
+            <p>It creates or reuses SWP_Water, assigns the water material, adds Geometry Nodes modifiers and creates required collections.</p>
+          </details>
+          <details>
+            <summary>How do I create foam around objects?</summary>
+            <p>Select your object and use Add Selected to Static so it becomes part of the Static_Objects workflow.</p>
+          </details>
+          <details>
+            <summary>How do I create ripples?</summary>
+            <p>Add selected objects or proxies to Ripple_Points and adjust the ripple controls in the panel.</p>
+          </details>
+          <details>
+            <summary>How do floating objects work?</summary>
+            <p>Add selected objects to Floating_Objects so the addon can set up floating-related controllers and constraints.</p>
+          </details>
+          <details>
+            <summary>Can I use presets?</summary>
+            <p>Yes. Use built-in presets or save custom presets as JSON files in the addon presets folder.</p>
+          </details>
+          <details>
+            <summary>What if the asset file is missing?</summary>
+            <p>Make sure Water_Surface_MambaCG.blend exists inside the addon assets folder.</p>
+          </details>
+          <details>
+            <summary>Are the nodes editable?</summary>
+            <p>The system uses Blender materials and Geometry Nodes, so advanced users can inspect and customize the setup.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="swp-final section-reveal">
+        <div class="media-card compact final-media"><strong>Before / after render</strong><p>Show the same scene before and after adding Stylized Water Pro. This is one of the most important conversion images.</p></div>
+        <h2>Create stylized water without rebuilding complex nodes from scratch.</h2>
+        <p>Stylized Water Pro gives Blender artists a ready one-click system for animated water, shader controls, foam, ripples, floating objects and presets.</p>
+      </section>
+    </main>
+
+    <button class="back-to-top" type="button" aria-label="Back to top">Top</button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
