@@ -12,7 +12,7 @@ How to use:
 3. Paste the iframe into the SuperHive editor.
 
 Example iframe:
-<iframe src="https://your-domain.com/stylized-water-pro-page/index.html" width="100%" height="7200" style="border:0; width:100%; max-width:100%;" loading="lazy"></iframe>
+<iframe src="https://mamba-cg.github.io/addons/stylized-water-pro/" width="100%" height="7200" style="border:0; width:100%; max-width:100%;" loading="lazy"></iframe>
 
 Recommended iframe height:
 - Desktop: 7000-7600 px
