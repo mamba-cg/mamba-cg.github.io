@@ -1,21 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;600;700;800;900&display=swap");
+
 :root {
-  --ink: #071318;
-  --ink-2: #13252c;
-  --graphite: #33464d;
-  --slate: #70858d;
-  --line: #dce7ea;
-  --cloud: #eef7f8;
-  --paper: #f8fbfb;
+  --ink: #06151c;
+  --ink-2: #102a35;
+  --graphite: #314b56;
+  --slate: #6d8792;
+  --line: #d7e8ee;
+  --cloud: #eaf6fa;
+  --paper: #f5fbfd;
   --white: #ffffff;
-  --aqua: #16a8bb;
-  --aqua-dark: #0d7080;
-  --aqua-light: #8eeaf2;
+  --aqua: #037fad;
+  --aqua-dark: #025f82;
+  --aqua-light: #9adff4;
   --gold: #f4c45f;
   --shadow-ink: 7px 7px 0 var(--ink);
   --radius-sm: 10px;
   --radius-md: 18px;
   --radius-lg: 28px;
-  --font-display: Montserrat, Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Bricolage Grotesque", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -31,7 +33,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background:
+    radial-gradient(circle at top left, rgba(3, 127, 173, 0.16), transparent 30%),
+    var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
@@ -64,8 +68,8 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  letter-spacing: -0.035em;
-  line-height: 0.98;
+  letter-spacing: -0.01em;
+  line-height: 1.06;
 }
 
 p {
@@ -162,16 +166,16 @@ p {
   align-items: center;
   min-height: 680px;
   background:
-    radial-gradient(circle at 84% 18%, rgba(142, 234, 242, 0.28), transparent 24%),
-    radial-gradient(circle at 20% 88%, rgba(22, 168, 187, 0.24), transparent 34%),
-    linear-gradient(135deg, #071318 0%, #0c3440 52%, #0e6d7c 100%);
+    radial-gradient(circle at 84% 18%, rgba(154, 223, 244, 0.3), transparent 24%),
+    radial-gradient(circle at 20% 88%, rgba(3, 127, 173, 0.36), transparent 34%),
+    linear-gradient(135deg, #06151c 0%, #07364b 48%, #037fad 100%);
   color: var(--white);
 }
 
 .swp-hero h1 {
   max-width: 9.6em;
   font-size: clamp(46px, 7vw, 92px);
-  font-weight: 950;
+  font-weight: 800;
 }
 
 .swp-lead {
@@ -274,7 +278,7 @@ p {
   border: 2px solid var(--line);
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(135deg, rgba(22, 168, 187, 0.12), rgba(255, 255, 255, 0.72)),
+    linear-gradient(135deg, rgba(3, 127, 173, 0.14), rgba(255, 255, 255, 0.72)),
     var(--white);
   text-align: center;
   overflow: hidden;
@@ -293,8 +297,8 @@ p {
   min-height: 430px;
   border-color: rgba(255, 255, 255, 0.25);
   background:
-    radial-gradient(circle at 30% 20%, rgba(142, 234, 242, 0.36), transparent 34%),
-    linear-gradient(145deg, #0d4551, #061116);
+    radial-gradient(circle at 30% 20%, rgba(154, 223, 244, 0.38), transparent 34%),
+    linear-gradient(145deg, #036f98, #06151c);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.26);
 }
 
@@ -359,8 +363,8 @@ p {
 
 .media-card.dark {
   background:
-    radial-gradient(circle at 24% 10%, rgba(142, 234, 242, 0.22), transparent 34%),
-    linear-gradient(145deg, var(--ink), #0d5563);
+    radial-gradient(circle at 24% 10%, rgba(154, 223, 244, 0.24), transparent 34%),
+    linear-gradient(145deg, var(--ink), #037fad);
   border-color: var(--ink);
   color: var(--white);
 }
@@ -454,8 +458,8 @@ p {
 
 .dark-card {
   background:
-    radial-gradient(circle at 18% 14%, rgba(142, 234, 242, 0.22), transparent 28%),
-    linear-gradient(145deg, var(--ink), #0a5260);
+    radial-gradient(circle at 18% 14%, rgba(154, 223, 244, 0.24), transparent 28%),
+    linear-gradient(145deg, var(--ink), #037fad);
   color: var(--white);
 }
 
@@ -636,7 +640,9 @@ p {
 }
 
 .media-section {
-  background: var(--ink);
+  background:
+    radial-gradient(circle at 88% 12%, rgba(3, 127, 173, 0.26), transparent 28%),
+    linear-gradient(135deg, var(--ink), #07364b);
   color: var(--white);
 }
 
@@ -750,8 +756,8 @@ details p {
   gap: 34px;
   align-items: center;
   background:
-    radial-gradient(circle at 16% 18%, rgba(142, 234, 242, 0.26), transparent 30%),
-    linear-gradient(135deg, var(--ink), #0f6d7c);
+    radial-gradient(circle at 16% 18%, rgba(154, 223, 244, 0.28), transparent 30%),
+    linear-gradient(135deg, var(--ink), #037fad);
   color: var(--white);
 }
 
