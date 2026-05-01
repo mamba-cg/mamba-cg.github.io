@@ -1,6 +1,10 @@
 (function () {
   "use strict";
 
+  if (window.location.search.indexOf("embed=1") !== -1) {
+    document.documentElement.classList.add("is-embedded");
+  }
+
   var revealItems = document.querySelectorAll(".section-reveal");
   if ("IntersectionObserver" in window) {
     var observer = new IntersectionObserver(function (entries) {

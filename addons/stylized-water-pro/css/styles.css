@@ -31,6 +31,18 @@ html {
   scroll-behavior: smooth;
 }
 
+html.is-embedded,
+html.is-embedded body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html.is-embedded::-webkit-scrollbar,
+html.is-embedded body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 body {
   margin: 0;
   background:
