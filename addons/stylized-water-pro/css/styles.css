@@ -428,6 +428,22 @@ p {
   font-size: 14px;
 }
 
+.preset-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.preset-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 10px 24px rgba(6, 21, 28, 0.12);
+}
+
 .swp-proof article:hover p,
 .swp-proof article:hover span {
   color: rgba(255, 255, 255, 0.72);
@@ -884,6 +900,10 @@ details p {
     grid-template-columns: 1fr;
   }
 
+  .preset-gallery {
+    max-width: 560px;
+  }
+
   .overview-list {
     grid-template-columns: 1fr;
   }
@@ -914,6 +934,14 @@ details p {
   .workflow-panel p,
   .swp-final p {
     font-size: 16px;
+  }
+
+  .preset-gallery {
+    gap: 8px;
+  }
+
+  .preset-gallery img {
+    border-radius: 10px;
   }
 
   .swp-actions {
