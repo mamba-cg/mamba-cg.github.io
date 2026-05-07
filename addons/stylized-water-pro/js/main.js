@@ -24,28 +24,47 @@
   var tabButtons = document.querySelectorAll(".tab-button");
   var tabPanels = document.querySelectorAll(".workflow-panel");
 
+  function activateWorkflowTab(button) {
+    if (!button) return;
+    var targetId = button.getAttribute("data-tab");
+
+    tabButtons.forEach(function (btn) {
+      btn.classList.remove("is-active");
+      btn.setAttribute("aria-selected", "false");
+    });
+
+    tabPanels.forEach(function (panel) {
+      panel.classList.remove("is-active");
+    });
+
+    button.classList.add("is-active");
+    button.setAttribute("aria-selected", "true");
+
+    var targetPanel = document.getElementById(targetId);
+    if (targetPanel) {
+      targetPanel.classList.add("is-active");
+    }
+  }
+
   tabButtons.forEach(function (button) {
     button.addEventListener("click", function () {
-      var targetId = button.getAttribute("data-tab");
-
-      tabButtons.forEach(function (btn) {
-        btn.classList.remove("is-active");
-        btn.setAttribute("aria-selected", "false");
-      });
-
-      tabPanels.forEach(function (panel) {
-        panel.classList.remove("is-active");
-      });
-
-      button.classList.add("is-active");
-      button.setAttribute("aria-selected", "true");
-
-      var targetPanel = document.getElementById(targetId);
-      if (targetPanel) {
-        targetPanel.classList.add("is-active");
-      }
+      activateWorkflowTab(button);
     });
   });
+
+  if (tabButtons.length > 1 && tabPanels.length > 1) {
+    window.setInterval(function () {
+      var activeIndex = -1;
+      tabButtons.forEach(function (btn, idx) {
+        if (btn.classList.contains("is-active")) {
+          activeIndex = idx;
+        }
+      });
+
+      var nextIndex = (activeIndex + 1) % tabButtons.length;
+      activateWorkflowTab(tabButtons[nextIndex]);
+    }, 2000);
+  }
 
   var faqItems = document.querySelectorAll(".faq-list details");
   faqItems.forEach(function (item) {
