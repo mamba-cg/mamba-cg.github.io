@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Quick Audio Animator for Blender 5.2+: turn music and sound into editable animation for objects, lights, materials, cameras, Geometry Nodes, modifiers, shape keys and custom properties. Includes 23 presets, Live Preview, six demo scenes and keyframe baking.">
+  <meta name="theme-color" content="#060706">
+  <title>Quick Audio Animator - Blender Add-on by MambaCG</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="site-shell" id="top">
+
+    <header class="hero hud-panel">
+      <div class="hero-kicker">
+        <span>MAMBACG / AUDIO REACTIVE TOOLS</span>
+        <span>BLENDER 5.2+</span>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy-block">
+          <p class="eyebrow">Quick Audio Animator</p>
+          <h1>Turn sound<br>into <em>motion.</em></h1>
+          <p class="hero-copy">Animate objects, lights, materials, cameras, Geometry Nodes and more from bass, beats, treble or custom frequency ranges.</p>
+          <div class="hero-actions">
+            <a href="#demos" class="btn-primary">Watch Demo Scenes</a>
+            <a href="#features" class="btn-ghost">Explore Features</a>
+          </div>
+        </div>
+
+        <dl class="hero-stats">
+          <div><dt>23</dt><dd>Built-in presets</dd></div>
+          <div><dt>22</dt><dd>Target types</dd></div>
+          <div><dt>10</dt><dd>Audio signals</dd></div>
+          <div><dt>6</dt><dd>Demo scenes</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <figure class="media-frame video-showcase hero-video" aria-label="Quick Audio Animator product showreel">
+      <video class="qaa-video" autoplay muted loop playsinline preload="metadata" poster="images/showreel.jpg" aria-label="Quick Audio Animator product showreel">
+        <source src="video/qaa-showreel.mp4" type="video/mp4">
+      </video>
+      <div class="video-overlay">
+        <div class="video-badge">PRODUCT SHOWREEL</div>
+        <div class="video-overlay-content">
+          <div>
+            <strong>Sound in.<br>Animation out.</strong>
+            <p>Objects / Materials / Lights / Cameras / Geometry Nodes</p>
+          </div>
+          <button type="button" class="sound-toggle-large" aria-pressed="false">Enable Sound</button>
+        </div>
+      </div>
+      <figcaption><span>Quick Audio Animator</span><span>Autoplay muted</span></figcaption>
+    </figure>
+
+    <section class="section" id="features">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">01 / Why it feels fast</p>
+          <h2>Build reactions.<br>Not keyframes.</h2>
+        </div>
+        <p>Load a track, pick a signal, choose what it drives, preview the result, then bake it to standard Blender animation.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="cyber-card">
+          <span class="card-index">01</span>
+          <h3>Pick the signal</h3>
+          <p>Bass, Beat, Mids, Treble, Full Spectrum, Overall Energy or any custom frequency range.</p>
+        </article>
+        <article class="cyber-card">
+          <span class="card-index">02</span>
+          <h3>Choose the target</h3>
+          <p>Transforms, lights, materials, camera settings, Geometry Nodes, modifiers, shape keys and custom properties.</p>
+        </article>
+        <article class="cyber-card">
+          <span class="card-index">03</span>
+          <h3>Shape the reaction</h3>
+          <p>Attack, release, smoothing, curves, mapping, offsets, variation and layered combine modes.</p>
+        </article>
+        <article class="cyber-card">
+          <span class="card-index">04</span>
+          <h3>Bake when ready</h3>
+          <p>Convert the final result to editable Blender Actions and keyframes for rendering and further work.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section visual-section" id="workflow">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">02 / Workflow</p>
+          <h2>Load. React.<br>Preview. Bake.</h2>
+        </div>
+        <p>Start with a preset in seconds. Fine-tune only when you need more control.</p>
+      </div>
+
+      <div class="workflow-strip">
+        <div><b>01</b><span>Load Audio</span></div>
+        <div><b>02</b><span>Add Reaction</span></div>
+        <div><b>03</b><span>Live Preview</span></div>
+        <div><b>04</b><span>Bake Keyframes</span></div>
+      </div>
+
+      <div class="split-media premium-media-grid">
+        <figure class="media-frame">
+          <img src="images/neon-stage.jpg" alt="Neon Stage audio reactive demo scene" loading="lazy" decoding="async">
+          <figcaption><span>Neon Stage</span><span>Motion / Lights / Camera</span></figcaption>
+        </figure>
+        <figure class="media-frame">
+          <img src="images/signal-city.jpg" alt="Signal City Geometry Nodes audio reactive demo scene" loading="lazy" decoding="async">
+          <figcaption><span>Signal City</span><span>Geometry Nodes / Modifiers / Properties</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="control">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">03 / Creative control</p>
+          <h2>More than<br>volume to scale.</h2>
+        </div>
+        <p>Design how the audio behaves before it reaches the target.</p>
+      </div>
+
+      <div class="tech-grid">
+        <div><span>Signal shaping</span><strong>Gain / Threshold / Normalize / Mapping</strong></div>
+        <div><span>Timing</span><strong>Attack / Release / Smoothing / Offset</strong></div>
+        <div><span>Response</span><strong>Linear / Smooth / Sharp / Soft / Punch / Step / Custom</strong></div>
+        <div><span>Variation</span><strong>Strength / Time / Frequency / Phase / Seed</strong></div>
+        <div><span>Behavior</span><strong>Additive / Multiplicative / Absolute</strong></div>
+        <div><span>Combine</span><strong>Add / Multiply / Max / Min / Average / Replace</strong></div>
+      </div>
+
+      <figure class="media-frame full-image-block">
+        <img src="images/kinetic-typography.jpg" alt="Kinetic Typography audio reactive demo scene" loading="lazy" decoding="async">
+        <figcaption><span>Kinetic Typography</span><span>Bass / Beat / Treble / Custom Frequency</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="section" id="targets">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">04 / Target system</p>
+          <h2>Drive almost<br>anything useful.</h2>
+        </div>
+        <p>Quick Audio Animator is built for scene-wide audio-reactive workflows, not only object transforms.</p>
+      </div>
+
+      <div class="target-cloud" aria-label="Supported target examples">
+        <span>Location</span><span>Rotation</span><span>Scale</span><span>Light Energy</span><span>Light Color</span><span>Camera Lens</span><span>Camera Shake</span><span>Material</span><span>Shader Socket</span><span>Geometry Nodes Input</span><span>Modifier Property</span><span>Shape Key</span><span>Custom Property</span><span>RNA Property</span><span>Emissive Object + Light</span>
+      </div>
+
+      <div class="split-media premium-media-grid">
+        <figure class="media-frame">
+          <img src="images/resonant-sculpture.jpg" alt="Resonant Sculpture material and lighting demo scene" loading="lazy" decoding="async">
+          <figcaption><span>Resonant Sculpture</span><span>Materials / Emission / Focus</span></figcaption>
+        </figure>
+        <figure class="media-frame">
+          <img src="images/neon-equalizer.jpg" alt="Neon Equalizer frequency reactive demo scene" loading="lazy" decoding="async">
+          <figcaption><span>Neon Equalizer</span><span>Custom Frequency / Geometry Nodes / Glow</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="presets">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">05 / Presets</p>
+          <h2>23 starting points.<br>Fully editable.</h2>
+        </div>
+        <p>Use ready-made reactions for motion, lighting, cameras, materials and Geometry Nodes, then customize them for your scene.</p>
+      </div>
+
+      <div class="preset-chips">
+        <span>Bass Pulse</span><span>Beat Bounce</span><span>Treble Rotation</span><span>Music Float</span><span>Impact Punch</span><span>Beat Flash</span><span>Bass Glow</span><span>Camera Shake</span><span>Lens Pulse</span><span>Emission Pulse</span><span>Roughness Dance</span><span>Metallic Pulse</span><span>Density Pulse</span><span>Instance Scale</span><span>Wave Strength</span><span>Animation Speed</span>
+      </div>
+      <p class="micro-note">Custom user presets can also be saved, renamed, deleted, imported and exported as JSON.</p>
+    </section>
+
+    <section class="section" id="included-demos">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">06 / Included content</p>
+          <h2>6 Demo Scenes<br>Included.</h2>
+        </div>
+        <p>Ready-to-open Blender 5.2 scenes for learning, reverse-engineering and fast experimentation.</p>
+      </div>
+
+      <div class="included-card premium-included">
+        <div class="included-copy">
+          <p>Quick Audio Animator includes <strong>6 ready-to-use demo scenes for Blender 5.2</strong>. Each scene demonstrates a different audio-reactive workflow and can be used as a learning example for your own setups.</p>
+          <ul class="included-list">
+            <li>Kinetic Typography</li>
+            <li>Neon Equalizer</li>
+            <li>Neon Stage</li>
+            <li>Radial Spectrum</li>
+            <li>Resonant Sculpture</li>
+            <li>Signal City</li>
+          </ul>
+          <p>Open a scene, inspect the reactions, replace the demo audio with your own track and keep building from there.</p>
+        </div>
+        <div class="included-grid" aria-label="Demo scene thumbnails">
+          <img src="images/kinetic-typography.jpg" alt="Kinetic Typography scene thumbnail" loading="lazy">
+          <img src="images/neon-equalizer.jpg" alt="Neon Equalizer scene thumbnail" loading="lazy">
+          <img src="images/neon-stage.jpg" alt="Neon Stage scene thumbnail" loading="lazy">
+          <img src="images/radial-spectrum.jpg" alt="Radial Spectrum scene thumbnail" loading="lazy">
+          <img src="images/resonant-sculpture.jpg" alt="Resonant Sculpture scene thumbnail" loading="lazy">
+          <img src="images/signal-city.jpg" alt="Signal City scene thumbnail" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demos">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">07 / Video gallery</p>
+          <h2>Watch every<br>demo scene.</h2>
+        </div>
+        <p>Videos autoplay muted. Select a scene and use the large sound button when you want to hear the demo track.</p>
+      </div>
+
+      <div class="scene-picker" data-scene-picker aria-label="Choose a demo scene">
+        <button type="button" data-scene="neon"><img src="images/neon-stage.jpg" alt="" loading="lazy"><small>01</small><span>Neon Stage</span></button>
+        <button type="button" data-scene="sculpture"><img src="images/resonant-sculpture.jpg" alt="" loading="lazy"><small>02</small><span>Resonant Sculpture</span></button>
+        <button type="button" data-scene="city"><img src="images/signal-city.jpg" alt="" loading="lazy"><small>03</small><span>Signal City</span></button>
+        <button type="button" data-scene="equalizer"><img src="images/neon-equalizer.jpg" alt="" loading="lazy"><small>04</small><span>Neon Equalizer</span></button>
+        <button type="button" data-scene="typography"><img src="images/kinetic-typography.jpg" alt="" loading="lazy"><small>05</small><span>Kinetic Typography</span></button>
+        <button type="button" data-scene="radial"><img src="images/radial-spectrum.jpg" alt="" loading="lazy"><small>06</small><span>Radial Spectrum</span></button>
+      </div>
+
+      <article class="demo-panel" data-scene-panel="neon">
+        <figure class="media-frame video-showcase">
+          <video class="qaa-video" autoplay muted loop playsinline preload="metadata" poster="images/neon-stage.jpg"><source src="video/neon-stage.mp4" type="video/mp4"></video>
+          <div class="video-overlay"><div class="video-badge">DEMO 01</div><div class="video-overlay-content"><div><strong>Neon Stage.</strong><p>Rhythm / Lights / Camera</p></div><button type="button" class="sound-toggle-large" aria-pressed="false">Enable Sound</button></div></div>
+          <figcaption><span>Neon Stage</span><span>Bass / Beat / Lights / Camera</span></figcaption>
+        </figure>
+      </article>
+
+      <article class="demo-panel" data-scene-panel="sculpture">
+        <figure class="media-frame video-showcase">
+          <video class="qaa-video" autoplay muted loop playsinline preload="metadata" poster="images/resonant-sculpture.jpg"><source src="video/resonant-sculpture.mp4" type="video/mp4"></video>
+          <div class="video-overlay"><div class="video-badge">DEMO 02</div><div class="video-overlay-content"><div><strong>Resonant Sculpture.</strong><p>Material / Focus / Emission</p></div><button type="button" class="sound-toggle-large" aria-pressed="false">Enable Sound</button></div></div>
+          <figcaption><span>Resonant Sculpture</span><span>Shape Keys / Materials / Focus</span></figcaption>
+        </figure>
+      </article>
+
+      <article class="demo-panel" data-scene-panel="city">
+        <figure class="media-frame video-showcase">
+          <video class="qaa-video" autoplay muted loop playsinline preload="metadata" poster="images/signal-city.jpg"><source src="video/signal-city.mp4" type="video/mp4"></video>
+          <div class="video-overlay"><div class="video-badge">DEMO 03</div><div class="video-overlay-content"><div><strong>Signal City.</strong><p>Geometry Nodes / Properties</p></div><button type="button" class="sound-toggle-large" aria-pressed="false">Enable Sound</button></div></div>
+          <figcaption><span>Signal City</span><span>Geometry Nodes / Modifiers / Variation</span></figcaption>
+        </figure>
+      </article>
+
+      <article class="demo-panel" data-scene-panel="equalizer">
+        <figure class="media-frame video-showcase">
+          <video class="qaa-video" autoplay muted loop playsinline preload="metadata" poster="images/neon-equalizer.jpg"><source src="video/neon-equalizer.mp4" type="video/mp4"></video>
+          <div class="video-overlay"><div class="video-badge">DEMO 04</div><div class="video-overlay-content"><div><strong>Neon Equalizer.</strong><p>Frequency Bands / Glow</p></div><button type="button" class="sound-toggle-large" aria-pressed="false">Enable Sound</button></div></div>
+          <figcaption><span>Neon Equalizer</span><span>Custom Frequency / Segments / Glow</span></figcaption>
+        </figure>
+      </article>
+
+      <article class="demo-panel" data-scene-panel="typography">
+        <figure class="media-frame video-showcase">
+          <video class="qaa-video" autoplay muted loop playsinline preload="metadata" poster="images/kinetic-typography.jpg"><source src="video/kinetic-typography.mp4" type="video/mp4"></video>
+          <div class="video-overlay"><div class="video-badge">DEMO 05</div><div class="video-overlay-content"><div><strong>Kinetic Typography.</strong><p>Type / Bass / Beat / Frequency</p></div><button type="button" class="sound-toggle-large" aria-pressed="false">Enable Sound</button></div></div>
+          <figcaption><span>Kinetic Typography</span><span>3D Type / Bass / Beat / Frequency</span></figcaption>
+        </figure>
+      </article>
+
+      <article class="demo-panel" data-scene-panel="radial">
+        <figure class="media-frame video-showcase">
+          <video class="qaa-video" autoplay muted loop playsinline preload="metadata" poster="images/radial-spectrum.jpg"><source src="video/radial-spectrum.mp4" type="video/mp4"></video>
+          <div class="video-overlay"><div class="video-badge">DEMO 06</div><div class="video-overlay-content"><div><strong>Radial Spectrum.</strong><p>48 Bars / Frequency / Glow</p></div><button type="button" class="sound-toggle-large" aria-pressed="false">Enable Sound</button></div></div>
+          <figcaption><span>Radial Spectrum</span><span>48 Bars / Custom Bands / Logo</span></figcaption>
+        </figure>
+      </article>
+    </section>
+
+    <section class="section" id="bake">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">08 / Production output</p>
+          <h2>Preview live.<br>Bake real keyframes.</h2>
+        </div>
+        <p>Keep iteration fast with Live Preview, then convert the result to standard Blender animation.</p>
+      </div>
+
+      <div class="bake-grid">
+        <figure class="media-frame">
+          <img src="images/radial-spectrum.jpg" alt="Audio reactive animation ready to bake to Blender keyframes" loading="lazy" decoding="async">
+          <figcaption><span>Bake to Keyframes</span><span>Editable Blender animation</span></figcaption>
+        </figure>
+        <div class="bake-points">
+          <div><b>01</b><span>Scene, Audio or Custom range</span></div>
+          <div><b>02</b><span>Linear, Bezier or Constant interpolation</span></div>
+          <div><b>03</b><span>Optional curve simplification</span></div>
+          <div><b>04</b><span>Replace or remove QAA bakes</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section specs-section" id="specs">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">09 / Technical</p>
+          <h2>Built for<br>Blender 5.2+.</h2>
+        </div>
+        <p>Blender-native audio analysis. No cloud processing and no extra Python packages required.</p>
+      </div>
+
+      <dl class="spec-list technical-specs">
+        <div><dt>Blender</dt><dd>5.2.0+</dd></div>
+        <div><dt>Audio Signals</dt><dd>10</dd></div>
+        <div><dt>Target Types</dt><dd>22</dd></div>
+        <div><dt>Built-in Presets</dt><dd>23</dd></div>
+        <div><dt>Demo Scenes</dt><dd>6</dd></div>
+        <div><dt>Output</dt><dd>Blender Actions + Keyframes</dd></div>
+      </dl>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="section-heading compact"><div><p class="eyebrow">10 / FAQ</p><h2>Quick answers.</h2></div></div>
+      <div class="faq-list">
+        <details open><summary><b>01</b><span>Does it detect BPM?</span></summary><p>No. Beat / Pulse detects audio transients rather than estimating musical BPM.</p></details>
+        <details><summary><b>02</b><span>Do I need to bake before rendering?</span></summary><p>Yes. Use Live Preview while designing the effect, then bake the finished animation to keyframes.</p></details>
+        <details><summary><b>03</b><span>Can it animate more than transforms?</span></summary><p>Yes. Lights, cameras, materials, shader sockets, Geometry Nodes, modifiers, shape keys and custom properties are supported.</p></details>
+        <details><summary><b>04</b><span>Can many objects react differently?</span></summary><p>Yes. Per-object timing, strength, frequency and phase variation can make one setup feel much less uniform.</p></details>
+        <details><summary><b>05</b><span>Are the demo scenes included?</span></summary><p>Yes. Six editable Blender 5.2 demo scenes are included with the add-on.</p></details>
+      </div>
+    </section>
+
+    <footer class="footer hud-panel">
+      <p class="eyebrow">Quick Audio Animator / MambaCG</p>
+      <h2>Your track.<br>Your scene.<br><em>Your motion.</em></h2>
+      <p>Start with a preset or demo scene, shape the response, preview it live and bake the final result to editable Blender animation.</p>
+      <a href="#top" class="btn-ghost footer-link">Back to top</a>
+    </footer>
+  </main>
+</body>
+</html>
