@@ -42,6 +42,9 @@ function renderProductCards(products) {
 
     return render(template, {
       URL: escapeHtml(product.url),
+      DETAIL_URL: escapeHtml(product.detailUrl || product.url),
+      TARGET_ATTRS: product.url.startsWith("https://") ? 'target="_blank" rel="noopener noreferrer"' : '',
+      CTA: escapeHtml(product.shortName || "Explore add-on"),
       NAME: escapeHtml(product.name),
       IMAGE: escapeHtml(product.image),
       FALLBACK: escapeHtml(product.fallback),
@@ -72,7 +75,7 @@ function renderProductSchema(products) {
         "name": product.name,
         "applicationCategory": "DesignApplication",
         "operatingSystem": "Blender",
-        "url": product.url,
+        "url": product.schemaUrl || product.url,
         "description": product.schemaDescription || product.description
       }
     }))
@@ -122,10 +125,10 @@ function build() {
     outputPath: "index.html",
     productSchema,
     seo: {
-      title: "Blender Addons for Lighting, Sky and Water - MambaCG",
-      description: "Professional Blender addons for lighting, sky and water. Save time and create cinematic scenes faster.",
-      ogTitle: "Blender Addons for Lighting, Sky and Water - MambaCG",
-      ogDescription: "Professional Blender addons for lighting, sky and water. Save time and create cinematic scenes faster.",
+      title: "Blender Add-ons for Animation, Wildlife & Environments | Mamba CG",
+      description: "Explore Blender add-ons for audio-reactive animation, bird flocks, garden plants and stylized water. See features, examples and product links from Mamba CG.",
+      ogTitle: "Blender Add-ons for Animation, Wildlife & Environments | Mamba CG",
+      ogDescription: "Explore Blender add-ons for audio-reactive animation, bird flocks, garden plants and stylized water.",
       canonicalUrl: "https://mamba-cg.github.io/"
     },
     mainContent: indexContent
@@ -135,10 +138,10 @@ function build() {
     outputPath: "about-me.html",
     productSchema,
     seo: {
-      title: "About Me - Mamba CG",
-      description: "About Mamba CG, a Blender creator making 3D visual assets, custom addons and workflow tools for artists.",
-      ogTitle: "About Me - Mamba CG",
-      ogDescription: "Learn about Mamba CG, a Blender creator focused on 3D graphics, custom addons, models and workflow tools.",
+      title: "About Mamba CG | Blender Add-on Creator",
+      description: "Meet Mamba CG, a Blender creator making add-ons for audio animation, procedural flocks, garden scenes and stylized water.",
+      ogTitle: "About Mamba CG | Blender Add-on Creator",
+      ogDescription: "Learn about the creator behind Mamba CG's Blender add-ons for animation and scene building.",
       canonicalUrl: "https://mamba-cg.github.io/about-me.html"
     },
     mainContent: readProjectFile("templates/about-me-content.html")

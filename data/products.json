@@ -1,35 +1,51 @@
 [
   {
-    "name": "Quick Water - Ocean FX",
-    "shortName": "Quick Water",
-    "type": "Water addon",
-    "url": "https://superhivemarket.com/products/quick-oceanfx",
-    "image": "https://assets.superhivemarket.com/store/product/247978/image/xlarge_og-a7e738b32976fe6f998a5eb26d4dfd2c.jpg",
-    "fallback": "assets/products/quick-water-oceanfx.svg",
-    "description": "Create realistic oceans, waves, pools, baths, fountains and small water surfaces with a clean Blender workflow.",
-    "schemaDescription": "Blender addon for oceans, waves, pools, baths, fountains and small water surfaces.",
-    "tags": ["Oceans", "Pools", "Water FX"]
+    "name": "Quick Audio Visualizer",
+    "shortName": "Explore add-on",
+    "type": "Audio-reactive animation",
+    "url": "addons/quick-audio-visualizer/",
+    "schemaUrl": "https://mamba-cg.github.io/addons/quick-audio-visualizer/",
+    "detailUrl": "addons/quick-audio-visualizer/",
+    "image": "addons/quick-audio-visualizer/assets/signal-city.webp",
+    "fallback": "addons/quick-audio-visualizer/assets/neon-stage.webp",
+    "description": "Turn music into editable Blender animation. Make objects, lights and materials react to frequencies, beats and custom audio ranges.",
+    "schemaDescription": "Blender audio visualizer add-on for audio-reactive object, light and material animation with editable keyframes.",
+    "tags": ["Audio animation", "Editable keyframes", "Blender 5.2+"]
   },
   {
-    "name": "HDRI Sky Pro",
-    "shortName": "HDRI Sky Pro",
-    "type": "HDRI lighting addon",
-    "url": "https://superhivemarket.com/products/hdri-sky-pro",
-    "image": "https://assets.superhivemarket.com/store/product/245259/image/xlarge_og-065878050a369033ee05404032fb5843.jpg",
-    "fallback": "assets/products/hdri-sky-pro.svg",
-    "description": "Browse HDRI previews inside Blender, create worlds and skies, and combine HDRI lighting with cloud presets.",
-    "schemaDescription": "Blender addon for HDRI previews, world creation and HDRI lighting workflows.",
-    "tags": ["HDRI", "Lighting", "Clouds"]
+    "name": "Quick Birds & Insects",
+    "shortName": "View on Superhive",
+    "type": "Flock & swarm animation",
+    "url": "https://superhivemarket.com/products/quick-birds-insects-flock-swarm-generator",
+    "detailUrl": "addons/quick-birds-insects/",
+    "image": "addons/quick-audio-visualizer/assets/related-addons/birds-superhive-cover.jpg",
+    "fallback": "addons/quick-birds-insects/assets/birds-insects-atlas.png",
+    "description": "Create animated bird flocks and insect swarms with 17 flying variants, eight editable flight paths and flexible formations.",
+    "schemaDescription": "Blender flock and swarm add-on with 17 bird, bat and insect variants and editable flight paths.",
+    "tags": ["17 variants", "8 flight paths", "Geometry Nodes"]
   },
   {
-    "name": "Quick Sky Pro",
-    "shortName": "Quick Sky Pro",
-    "type": "Sky and clouds addon",
-    "url": "https://superhivemarket.com/products/quick-sky-pro",
-    "image": "https://assets.superhivemarket.com/store/product/226156/image/xlarge_og-24c94043ca708249bcd406542b34100d.jpg",
-    "fallback": "assets/products/quick-sky-pro.svg",
-    "description": "Use animated cloud presets, wind controls and cloud layers to build atmospheric Blender skies faster.",
-    "schemaDescription": "Blender addon for animated cloud presets, atmospheric skies and cloud layer controls.",
-    "tags": ["Clouds", "Atmosphere", "Presets"]
+    "name": "Quick Garden Billboards",
+    "shortName": "View on Superhive",
+    "type": "Plant library & scene dressing",
+    "url": "https://superhivemarket.com/products/quick_garden_plants",
+    "detailUrl": "addons/quick-garden-billboards/",
+    "image": "addons/quick-audio-visualizer/assets/related-addons/garden-superhive-cover.jpg",
+    "fallback": "addons/quick-garden-billboards/assets/photos/mambacg-qgb-05-1200.jpg",
+    "description": "Add lightweight garden plants made from original photography. Browse the library, vary assets and face billboards toward the camera.",
+    "schemaDescription": "Blender plant library add-on with original garden photography and lightweight camera-facing billboards.",
+    "tags": ["Original photography", "Plant library", "Lightweight scenes"]
+  },
+  {
+    "name": "Stylized Water Pro",
+    "shortName": "View on Superhive",
+    "type": "Stylized water system",
+    "url": "https://superhivemarket.com/products/stylized-water-shader",
+    "detailUrl": "addons/stylized-water-pro/",
+    "image": "addons/quick-audio-visualizer/assets/related-addons/water-superhive-cover.jpg",
+    "fallback": "addons/stylized-water-pro/images/presets/1.jpg",
+    "description": "Create animated stylized water with a procedural shader, Geometry Nodes waves, foam, ripples, floating objects and presets.",
+    "schemaDescription": "Blender stylized water add-on with procedural shading, Geometry Nodes waves, foam, ripples and floating object controls.",
+    "tags": ["Procedural shader", "Geometry Nodes", "Foam & ripples"]
   }
 ]

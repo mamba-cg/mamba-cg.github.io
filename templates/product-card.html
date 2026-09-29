@@ -1,12 +1,12 @@
-<article class="product-card featured-card">
-  <a class="product-image-link" href="{{URL}}" target="_blank" rel="noreferrer" aria-label="Open {{NAME}} on Superhive">
-    <img src="{{IMAGE}}" data-fallback="{{FALLBACK}}" alt="{{NAME}} Blender addon product image" width="800" height="450" loading="lazy" decoding="async" />
+<article class="product-card">
+  <a class="product-image-link" href="{{DETAIL_URL}}" aria-label="Explore {{NAME}} details">
+    <img src="{{IMAGE}}" data-fallback="{{FALLBACK}}" alt="{{NAME}} Blender add-on cover" width="1200" height="675" loading="lazy" decoding="async" />
   </a>
   <div class="product-content">
     <span class="product-type">{{TYPE}}</span>
     <h3>{{NAME}}</h3>
     <p>{{DESCRIPTION}}</p>
     <div class="product-tags">{{TAGS}}</div>
-    <a class="product-link" href="{{URL}}" target="_blank" rel="noreferrer">View on Superhive</a>
+    <a class="product-link" href="{{URL}}" {{TARGET_ATTRS}}>{{CTA}}</a>
   </div>
 </article>

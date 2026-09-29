@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://mamba-cg.github.io/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://mamba-cg.github.io/about-me.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://mamba-cg.github.io/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://mamba-cg.github.io/about-me.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mamba-cg.github.io/addons/quick-audio-visualizer/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mamba-cg.github.io/addons/quick-birds-insects/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mamba-cg.github.io/addons/quick-garden-billboards/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mamba-cg.github.io/addons/stylized-water-pro/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 </urlset>
