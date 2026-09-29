@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f9f5">
+  <meta name="description" content="Turn sound into motion in Blender. Quick Audio Visualizer maps audio frequencies to objects, lights, materials and more, with 23 reaction presets and six editable demo scenes.">
+  <title>Quick Audio Visualizer | Audio-reactive animation for Blender</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="hosting.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="eyebrow"><span class="status-dot"></span> Audio-reactive animation for Blender</div>
+      <h1 id="hero-title">Quick Audio Visualizer<em>Give your sound a little motion.</em></h1>
+      <p class="hero-description">Pulsing lights. Moving shapes. Music you can see.<br>Turn your audio into editable Blender animation.</p>
+      <figure class="hero-infographic" aria-label="Three-step workflow: add your music, choose what moves, then analyze and bake editable keyframes.">
+        <picture>
+          <source media="(max-width: 760px)" srcset="assets/audio-workflow-infographic-mobile.png?v=20260929">
+          <img src="assets/audio-workflow-infographic.png" width="2172" height="724" alt="Three steps: add your music, choose which objects move, then analyze and bake editable keyframes." fetchpriority="high">
+        </picture>
+      </figure>
+
+      <aside class="product-highlights" aria-label="Product highlights"><dl class="highlights-grid">
+        <div><dt><span class="highlight-icon" aria-hidden="true">5.2</span>Blender 5.2+</dt><dd>Native Blender workflow</dd></div>
+        <div><dt><span class="highlight-icon" aria-hidden="true">06</span>Six demo scenes</dt><dd>Ready to explore &amp; edit</dd></div>
+        <div><dt><span class="highlight-icon" aria-hidden="true">23</span>Reaction presets</dt><dd>A starting point for every beat</dd></div>
+        <div><dt><span class="highlight-icon" aria-hidden="true">◇</span>Bake to keyframes</dt><dd>Keep the result editable</dd></div>
+        <div><dt><span class="highlight-icon" aria-hidden="true">♪</span>Own scenes</dt><dd>Make any object react to your music</dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="section wrap custom-scene" id="any-scene" aria-labelledby="any-scene-title">
+      <div class="section-heading"><div><div class="eyebrow">Use your own scene</div><h2 id="any-scene-title">Take any Blender scene.<br><em>Make its objects follow the music.</em></h2></div><p>Start with your model, your lighting, your camera and your materials. Quick Audio Visualizer lets you choose which objects react, how strongly they move, and which part of the sound drives them.</p></div>
+      <div class="custom-scene-layout">
+        <div class="custom-scene-copy">
+          <p>You are not locked to the included demos. Use a finished environment, a product shot, abstract motion graphics, text, characters, props or procedural setups, then assign audio reactions to the objects that should move.</p>
+          <ul class="checks">
+            <li>Select objects in your existing scene and add them to a reaction group</li>
+            <li>Drive scale, location, rotation, lights, materials, modifiers or custom properties</li>
+            <li>Use bass, mids, treble, beats or a custom frequency range for each movement</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="showreel" aria-labelledby="showreel-title">
+      <div class="section-heading"><div><div class="eyebrow">See it in motion</div><h2 id="showreel-title">One track.<br><em>Six ways to feel it.</em></h2></div><p>From a neon stage to a city of sound.<br>Watch every included scene react to the music.</p></div>
+      <figure class="showreel">
+        <video id="demo-video" width="1920" height="1200" autoplay loop muted controls playsinline preload="metadata" poster="assets/showreel-poster.jpg" aria-label="Quick Audio Visualizer showreel demonstrating all six included Blender scenes silently">
+          <source src="assets/quick-audio-visualizer-showreel.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="assets/quick-audio-visualizer-showreel.mp4">Download the showreel.</a>
+        </video>
+        <figcaption><span>Six scenes. All created in Blender.</span><span>00:48 <span aria-hidden="true">·</span> Music included <span aria-hidden="true">·</span> Press play to listen</span></figcaption>
+      </figure>
+      <nav class="chapters" aria-label="Jump to a scene in the video">
+        <button type="button" data-time="0"><span>00:00</span>Neon Stage</button>
+        <button type="button" data-time="8"><span>00:08</span>Resonant Sculpture</button>
+        <button type="button" data-time="16"><span>00:16</span>Signal City</button>
+        <button type="button" data-time="24"><span>00:24</span>Neon Equalizer</button>
+        <button type="button" data-time="32"><span>00:32</span>Kinetic Typography</button>
+        <button type="button" data-time="40"><span>00:40</span>Radial Spectrum</button>
+      </nav>
+      <p class="video-status" id="video-status" role="status" aria-live="polite"></p>
+      <noscript><p class="media-note">Use the player's timeline to explore the six scenes, or <a href="assets/quick-audio-visualizer-showreel.mp4">open the video directly</a>.</p></noscript>
+    </section>
+
+    <section class="workflow-section" id="workflow" aria-labelledby="workflow-title"><div class="wrap">
+      <div class="section-heading"><div><div class="eyebrow">Quick start</div><h2 id="workflow-title">From your audio<br>to your animation.</h2></div><p>Choose what moves, decide how it reacts,<br>and make the rhythm your own.</p></div>
+      <div class="steps">
+        <article><span class="step-number">01</span><h3>Bring your sound</h3><p>Load an audio file, set its timing, and listen in Blender. Or start with a demo scene and its included synthesized track.</p><span class="step-tag">Load / Replace Audio</span></article>
+        <article><span class="step-number">02</span><h3>Build a reaction</h3><p>Assign objects to a group and add a preset. Choose a frequency band, adjust the strength, and shape the response.</p><span class="step-tag">Objects + signal + reaction</span></article>
+        <article><span class="step-number">03</span><h3>Preview &amp; bake</h3><p>Analyze the audio and preview your timeline. When the motion feels right, bake to editable keyframes for rendering.</p><span class="step-tag">Analyze → Preview → Bake</span></article>
+      </div>
+    </div></section>
+
+    <section class="section wrap panel-guide" id="panel-guide" aria-labelledby="panel-guide-title">
+      <div class="section-heading"><div><div class="eyebrow">Inside the add-on</div><h2 id="panel-guide-title">Meet your control panel.</h2></div><p>Five panel sections, explained. Open a screenshot to inspect the controls at full size.</p></div>
+      <nav class="panel-nav" aria-label="Panel sections"><a href="#panel-effects">Effects</a><a href="#panel-preview">Preview</a><a href="#panel-bake">Bake to Keyframes</a><a href="#panel-demos">Demo Scenes</a><a href="#panel-help">Help & Utilities</a></nav>
+      <figure class="panel-card" id="panel-effects">
+        <a class="panel-shot" href="assets/panel-effects.png" target="_blank" rel="noopener" aria-label="Open full-size Effects screenshot">
+          <img src="assets/panel-effects.png" width="2560" height="1440" loading="lazy" alt="Blender Quick Audio Visualizer with the Effects section expanded.">
+          <svg class="panel-arrow" viewBox="0 0 2560 1440" aria-hidden="true" focusable="false"><defs><marker id="arrow-effects" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0 0 L5 2.5 L0 5 Z" fill="white"/></marker></defs><path d="M 1450 790 Q 1440 740 1540 281" fill="none" stroke="white" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow-effects)"/></svg>
+          <span class="panel-callout"><strong>Effects</strong><span>Add audio-reactive effects to selected objects. Organize groups and adjust the signal, animated property, strength and smoothing.</span></span>
+        </a>
+        <figcaption><h3>01 / Effects</h3><p>Add audio-reactive effects to selected objects. Organize groups and adjust the signal, animated property, strength and smoothing.</p></figcaption>
+      </figure>
+      <figure class="panel-card" id="panel-preview">
+        <a class="panel-shot" href="assets/panel-preview.png" target="_blank" rel="noopener" aria-label="Open full-size Preview screenshot">
+          <img src="assets/panel-preview.png" width="2560" height="1440" loading="lazy" alt="Blender Quick Audio Visualizer with the Preview section expanded.">
+          <svg class="panel-arrow" viewBox="0 0 2560 1440" aria-hidden="true" focusable="false"><defs><marker id="arrow-preview" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0 0 L5 2.5 L0 5 Z" fill="white"/></marker></defs><path d="M 1450 790 Q 1440 740 1540 345" fill="none" stroke="white" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow-preview)"/></svg>
+          <span class="panel-callout"><strong>Preview</strong><span>Analyze the selected audio range, enable live preview and adjust the overall reaction strength before baking.</span></span>
+        </a>
+        <figcaption><h3>02 / Preview</h3><p>Analyze the selected audio range, enable live preview and adjust the overall reaction strength before baking.</p></figcaption>
+      </figure>
+      <figure class="panel-card" id="panel-bake">
+        <a class="panel-shot" href="assets/panel-bake.png" target="_blank" rel="noopener" aria-label="Open full-size Bake to Keyframes screenshot">
+          <img src="assets/panel-bake.png" width="2560" height="1440" loading="lazy" alt="Blender Quick Audio Visualizer with the Bake to Keyframes section expanded.">
+          <svg class="panel-arrow" viewBox="0 0 2560 1440" aria-hidden="true" focusable="false"><defs><marker id="arrow-bake" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0 0 L5 2.5 L0 5 Z" fill="white"/></marker></defs><path d="M 1450 790 Q 1440 740 1540 409" fill="none" stroke="white" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow-bake)"/></svg>
+          <span class="panel-callout"><strong>Bake to Keyframes</strong><span>Turn audio reactions into editable keyframes in a new Action. Choose the range and manage baked animation.</span></span>
+        </a>
+        <figcaption><h3>03 / Bake to Keyframes</h3><p>Turn audio reactions into editable keyframes in a new Action. Choose the range and manage baked animation.</p></figcaption>
+      </figure>
+      <figure class="panel-card" id="panel-demos">
+        <a class="panel-shot" href="assets/panel-demos.png" target="_blank" rel="noopener" aria-label="Open full-size Demo Scenes screenshot">
+          <img src="assets/panel-demos.png" width="2560" height="1440" loading="lazy" alt="Blender Quick Audio Visualizer with the Demo Scenes section expanded.">
+          <svg class="panel-arrow" viewBox="0 0 2560 1440" aria-hidden="true" focusable="false"><defs><marker id="arrow-demos" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0 0 L5 2.5 L0 5 Z" fill="white"/></marker></defs><path d="M 1450 790 Q 1440 740 1540 473" fill="none" stroke="white" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow-demos)"/></svg>
+          <span class="panel-callout"><strong>Demo Scenes</strong><span>Choose a demo and its audio, then create a separate scene with a camera, sound and audio reactions.</span></span>
+        </a>
+        <figcaption><h3>04 / Demo Scenes</h3><p>Choose a demo and its audio, then create a separate scene with a camera, sound and audio reactions.</p></figcaption>
+      </figure>
+      <figure class="panel-card" id="panel-help">
+        <a class="panel-shot" href="assets/panel-help.png" target="_blank" rel="noopener" aria-label="Open full-size Help & Utilities screenshot">
+          <img src="assets/panel-help.png" width="2560" height="1440" loading="lazy" alt="Blender Quick Audio Visualizer with the Help & Utilities section expanded.">
+          <svg class="panel-arrow" viewBox="0 0 2560 1440" aria-hidden="true" focusable="false"><defs><marker id="arrow-help" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0 0 L5 2.5 L0 5 Z" fill="white"/></marker></defs><path d="M 1450 790 Q 1710 740 1810 537" fill="none" stroke="white" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow-help)"/></svg>
+          <span class="panel-callout"><strong>Help & Utilities</strong><span>Follow the workflow from loading audio to baking animation, and open troubleshooting when you need help.</span></span>
+        </a>
+        <figcaption><h3>05 / Help & Utilities</h3><p>Follow the workflow from loading audio to baking animation, and open troubleshooting when you need help.</p></figcaption>
+      </figure>
+    </section>
+
+    <section class="section wrap" id="scenes" aria-labelledby="scenes-title">
+      <div class="section-heading"><div><div class="eyebrow">The demo collection</div><h2 id="scenes-title">Six scenes to start with.<br><em>Make every one your own.</em></h2></div><p>Each demo creates a separate scene with a camera, audio and editable reactions. Explore the setup, then build on it.</p></div>
+      <div class="scene-grid">
+        <article class="scene-card"><a href="assets/neon-stage.png" target="_blank" rel="noopener"><img src="assets/neon-stage.webp" width="1920" height="1200" alt="Neon Stage demo with spectrum columns and bouncing pink pads" loading="lazy"></a><div class="scene-copy"><span class="scene-number">01 / RHYTHM &amp; LIGHT</span><h3>Neon Stage</h3><p>Bass-driven rings, bouncing pads, treble accents and reactive lighting bring a miniature concert stage to life.</p><button class="text-link scene-play" type="button" data-time="0">Watch this scene <span aria-hidden="true">↗</span></button></div></article>
+        <article class="scene-card"><a href="assets/resonant-sculpture.png" target="_blank" rel="noopener"><img src="assets/resonant-sculpture.webp" width="1920" height="1200" alt="Resonant Sculpture demo with a flowing central sculpture and glowing petals" loading="lazy"></a><div class="scene-copy"><span class="scene-number">02 / FORM &amp; MATERIAL</span><h3>Resonant Sculpture</h3><p>Explore flowing forms, glowing petals, material reactions and camera focus in a sculptural audio study.</p><button class="text-link scene-play" type="button" data-time="8">Watch this scene <span aria-hidden="true">↗</span></button></div></article>
+        <article class="scene-card"><a href="assets/signal-city.png" target="_blank" rel="noopener"><img src="assets/signal-city.webp" width="1920" height="1200" alt="Signal City demo with a procedural skyline, frequency towers and glowing connections" loading="lazy"></a><div class="scene-copy"><span class="scene-number">03 / PROCEDURAL MOTION</span><h3>Signal City</h3><p>A procedural city connects audio to Geometry Nodes, modifiers and custom properties, with layered reactions.</p><button class="text-link scene-play" type="button" data-time="16">Watch this scene <span aria-hidden="true">↗</span></button></div></article>
+        <article class="scene-card"><a href="assets/neon-equalizer.png" target="_blank" rel="noopener"><img src="assets/neon-equalizer.webp" width="1920" height="1200" alt="Neon Equalizer demo showing segmented yellow-to-red bars with a fading reflection" loading="lazy"></a><div class="scene-copy"><span class="scene-number">04 / FREQUENCY &amp; GLOW</span><h3>Neon Equalizer</h3><p>A classic segmented spectrum, from warm yellow to red, with luminous bars and a fading reflection.</p><button class="text-link scene-play" type="button" data-time="24">Watch this scene <span aria-hidden="true">↗</span></button></div></article>
+        <article class="scene-card"><a href="assets/kinetic-typography.png" target="_blank" rel="noopener"><img src="assets/kinetic-typography.webp" width="1920" height="1200" alt="Kinetic Typography demo with editable PULSE lettering and small frequency bars" loading="lazy"></a><div class="scene-copy"><span class="scene-number">05 / TYPE &amp; TIMING</span><h3>Kinetic Typography</h3><p>Editable 3D letters pulse to bass, bounce with staggered timing, and catch the treble with bright accents.</p><button class="text-link scene-play" type="button" data-time="32">Watch this scene <span aria-hidden="true">↗</span></button></div></article>
+        <article class="scene-card"><a href="assets/radial-spectrum.png" target="_blank" rel="noopener"><img src="assets/radial-spectrum.webp" width="1920" height="1200" alt="Radial Spectrum demo with 48 colored bars surrounding an editable QAV text logo" loading="lazy"></a><div class="scene-copy"><span class="scene-number">06 / CIRCULAR SPECTRUM</span><h3>Radial Spectrum</h3><p>48 radial bars surround an editable text logo. Custom frequency ranges turn a simple circle into a living spectrum.</p><button class="text-link scene-play" type="button" data-time="40">Watch this scene <span aria-hidden="true">↗</span></button></div></article>
+      </div>
+    </section>
+
+    <section class="feature-section" id="features" aria-labelledby="features-title"><div class="wrap">
+      <div class="section-heading"><div><div class="eyebrow">Creative controls</div><h2 id="features-title">Choose the frequencies.<br>Shape the feeling.</h2></div><p>Use a quick preset or build a detailed response.<br>Every reaction stays yours to adjust.</p></div>
+      <article class="feature-row"><div class="feature-copy"><span class="feature-index">01 / LISTEN TO THE DETAILS</span><h3>Give bass, mids &amp; treble<br>their own movement.</h3><p>Separate the deep pulse from the brighter details. Pick a built-in band or define a custom frequency range for each reaction.</p><ul class="checks"><li>Sub bass, bass, low mids, mids, high mids &amp; treble</li><li>Full spectrum, overall energy and beat / pulse signals</li><li>Custom low and high frequency limits</li></ul><div class="tags"><span>Frequency bands</span><span>Custom ranges</span><span>Beat / pulse</span></div></div><figure class="feature-image"><img src="assets/neon-equalizer.webp" width="1920" height="1200" alt="Segmented equalizer bars visualize individual frequency responses" loading="lazy"></figure></article>
+      <article class="feature-row reverse"><div class="feature-copy"><span class="feature-index">02 / CONNECT SOUND TO YOUR SCENE</span><h3>Animate more<br>than a spectrum.</h3><p>Use sound to drive object transforms, lighting, camera settings and materials. Connect a reaction to Geometry Nodes inputs, modifiers, shape keys or custom properties.</p><ul class="checks"><li>Stack reactions and choose how they combine</li><li>Drive emission and a companion light together</li><li>Start with 23 editable factory presets</li></ul><div class="tags"><span>Objects &amp; lights</span><span>Cameras &amp; materials</span><span>Geometry Nodes</span></div></div><figure class="feature-image"><img src="assets/signal-city.webp" width="1920" height="1200" alt="Signal City demonstrates sound driving a procedural Blender scene" loading="lazy"></figure></article>
+      <article class="feature-row"><div class="feature-copy"><span class="feature-index">03 / MAKE IT FEEL RIGHT</span><h3>A sharp impact.<br>A softer afterglow.</h3><p>Set the strength, threshold, attack and release. Smooth the signal, change the response curve, or add timing and strength variation across your objects.</p><ul class="checks"><li>Fine-tune the response for each reaction</li><li>Save your own presets; import and export them as JSON</li><li>Bake into dedicated actions with editable keyframes</li></ul><div class="tags"><span>Attack &amp; release</span><span>Timing variation</span><span>Editable keys</span></div></div><figure class="feature-image"><img src="assets/resonant-sculpture.webp" width="1920" height="1200" alt="Resonant Sculpture demonstrates flowing motion and glowing materials" loading="lazy"></figure></article>
+    </div></section>
+
+    <section class="section wrap overview" id="details" aria-labelledby="details-title"><div><div class="eyebrow">Add-on details</div><h2 id="details-title">Built for Blender.<br>Ready for your sound.</h2><p class="overview-intro">A focused toolkit for music visualizers, motion graphics and audio-reactive scenes.</p><a class="text-link" href="https://superhivemarket.com/creators/mambacg" target="_blank" rel="noopener noreferrer">Visit MambaCG on Superhive <span aria-hidden="true">↗</span></a></div><div class="spec-panel"><dl>
+      <div><dt>Compatibility</dt><dd>Blender 5.2 or newer</dd></div>
+      <div><dt>Demo collection</dt><dd>6 editable scenes with a synthesized demo track</dd></div>
+      <div><dt>Factory presets</dt><dd>23 adjustable reaction presets</dd></div>
+      <div><dt>Audio input</dt><dd>WAV, MP3, FLAC, OGG and other formats supported by your Blender build</dd></div>
+      <div><dt>Custom scenes</dt><dd>Assign your own music to objects in any Blender scene</dd></div>
+      <div><dt>Output</dt><dd>Editable Blender keyframes</dd></div>
+      <div><dt>Saved presets</dt><dd>Local library with JSON import &amp; export</dd></div>
+      <div><dt>Where to find it</dt><dd>3D Viewport → Sidebar → Quick Audio Visualizer</dd></div>
+    </dl></div></section>
+
+    <section class="faq-section wrap" aria-labelledby="faq-title"><div><div class="eyebrow">Help &amp; support</div><h2 id="faq-title">A few things<br>to know.</h2></div><div class="faq-list">
+      <details open><summary>Can I use my own music?<span aria-hidden="true">+</span></summary><p>Yes. Load your own audio file and analyze it to drive your reactions. The demo generator can use either the included synthesized track or the audio you have already loaded.</p></details>
+      <details><summary>Are the demo scenes editable?<span aria-hidden="true">+</span></summary><p>Yes. Add Demo Scene creates a separate Blender scene with its objects, materials, camera, audio and reaction groups. Inspect the setup, adjust the reactions, replace the sound or change the design.</p></details>
+      <details><summary>Do I need to bake before rendering?<span aria-hidden="true">+</span></summary><p>Use the live preview while developing your scene. Before rendering or exporting animation, use Bake to Keyframes. The resulting keyframes can be edited in Blender. Re-bake after changing the audio or reaction settings.</p></details>
+      <details><summary>Is Beat / Pulse a BPM detector?<span aria-hidden="true">+</span></summary><p>Beat / Pulse reacts to rising audio transients in a selected frequency band. It is not a musical BPM or tempo detector. Adjust its sensitivity, cooldown and frequency range to suit the track.</p></details>
+      <details><summary>Which Blender version do I need?<span aria-hidden="true">+</span></summary><p>Quick Audio Visualizer requires Blender 5.2 or newer. Its audio analysis uses Blender's native sound analysis tools. No separate Python audio packages are required.</p></details>
+    </div></section>
+
+    
+  </main>
+</body>
+</html>
