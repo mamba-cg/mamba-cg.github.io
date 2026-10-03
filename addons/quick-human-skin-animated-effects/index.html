@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080909">
+  <meta name="description" content="Quick Skin Effects brings eleven non-destructive procedural skin effects to Blender, with shared masks, layered controls and guided surface flow.">
+  <title>Quick Skin Effects — Skin details for Blender</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main id="main">
+    <section class="hero section-wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy" data-reveal>
+        <div class="eyebrow"><span class="eyebrow-line"></span> 11 editable effects for Blender</div>
+        <h1 id="hero-title">Quick<br><em>Skin Effects</em></h1>
+        <p class="hero-lede">Add water droplets, foam, skin detail and more to your Blender characters. Choose an effect, adjust its settings and paint where it appears.</p>
+        <strong><p class="hero-note">Designed for Blender 5.2+ <span>·</span> Procedural <span>·</span> Non-destructive stack</p></strong>
+      </div>
+      <div class="hero-media" id="showreel" data-reveal>
+        <video class="hero-video" width="1920" height="1080" autoplay muted loop playsinline controls preload="metadata" poster="media/quick-skin-effects-hero-poster.jpg" aria-label="Quick Skin Effects animated character preview">
+          <source src="media/quick-skin-effects-hero.mp4" type="video/mp4">
+          <a href="media/quick-skin-effects-hero.mp4">Watch the Quick Skin Effects preview</a>.
+        </video>
+      </div>
+    </section>
+
+    <section class="proof-strip" aria-label="Product highlights">
+      <div class="proof-inner"><div><strong>11</strong><span>skin effects</span></div><i></i><div><strong>4</strong><span>ways to choose coverage</span></div><i></i><div><strong>Editable</strong><span>effect layers</span></div><i></i><div><strong>5.2+</strong><span>Blender version</span></div></div>
+    </section>
+
+    <section class="workflow-section section-wrap" id="workflow" aria-labelledby="workflow-title">
+      <div class="section-index" data-reveal><span>03</span><i></i> A SIMPLE WORKFLOW</div>
+      <div class="section-heading" data-reveal><div><div class="eyebrow"><span class="eyebrow-line"></span> Start in three steps</div><h2 id="workflow-title">Add your <em>first effect</em></h2></div><p>Start with a mesh object in Blender. These three steps take you from selecting the model to adjusting an effect.</p></div>
+      <div class="steps-grid">
+        <article data-reveal><span class="step-count">01</span><div class="step-rule"></div><h3>Select your model</h3><p>Click your character mesh. Move the cursor over the 3D Viewport and press <b>N</b> to open the sidebar. Open <b>Quick Skin Effects</b> and click <b>Use Active Model</b>.</p></article>
+        <article data-reveal><span class="step-count">02</span><div class="step-rule"></div><h3>Add an effect</h3><p>Click the effect preview to open the browser. Select an effect, then click <b>Add</b>. Choosing a preview alone does not apply the effect.</p></article>
+        <article data-reveal><span class="step-count">03</span><div class="step-rule"></div><h3>Adjust the result</h3><p>Keep <b>Where to Apply → Whole Object</b> for your first try. Adjust the appearance controls. To limit the effect to a small area, choose <b>Draw Area</b> and paint on the model.</p></article>
+      </div>
+      <p class="setup-note"><strong>Install first:</strong> In Blender 5.2 or newer, open <b>Edit → Preferences → Add-ons → Install from Disk</b>. Select the downloaded ZIP without extracting it, then enable Quick Skin Effects.</p>
+    </section>
+
+    <section class="intro section-wrap" id="inside" aria-labelledby="intro-title">
+      <div class="section-index" data-reveal><span>01</span><i></i> THE APPROACH</div>
+      <div class="intro-grid">
+        <h2 id="intro-title" data-reveal>What does<br><em>the add-on do?</em></h2>
+        <div class="intro-copy" data-reveal><p>Add surface details without building each effect from scratch. Each effect stays in its own editable layer, so you can combine several looks and adjust them separately. Use a mask — a painted area that controls visibility — to keep details exactly where you want them.</p></div>
+      </div>
+    </section>
+
+    <section class="effects-section section-wrap" id="effects" aria-labelledby="effects-title">
+      <div class="section-heading" data-reveal><div><div class="eyebrow"><span class="eyebrow-line"></span> Eleven ways to add detail</div><h2 id="effects-title">Explore all <em>11 effects</em></h2></div><p>Each effect has its own character. Combine them, tune their settings and use masks to decide exactly where they belong.</p></div>
+      <div class="effect-grid">
+        <article class="effect-card" data-reveal><div class="effect-visual"><img class="effect-image" src="media/effects/goosebumps.png" alt="Close-up skin detail with fine raised bumps" loading="lazy" width="512" height="512"></div><div class="effect-copy"><span class="effect-number">01</span><h3>Goosebumps</h3><p>Add tiny raised skin bumps and fine shading detail.</p></div></article>
+        <article class="effect-card" data-reveal><div class="effect-visual"><img class="effect-image" src="media/effects/droplets.png" alt="Clear droplets catching a soft studio highlight" loading="lazy" width="512" height="512"></div><div class="effect-copy"><span class="effect-number">02</span><h3>Water Droplets</h3><p>Rounded beads with an adjustable water tint and spacing.</p></div></article>
+        <article class="effect-card" data-reveal><div class="effect-visual"><img class="effect-image" src="media/effects/wrinkles.png" alt="Soft directional folds across a skin surface" loading="lazy" width="512" height="512"></div><div class="effect-copy"><span class="effect-number">03</span><h3>Skin Wrinkles / Folds</h3><p>Add wrinkle and fold detail to the skin material.</p></div></article>
+        <article class="effect-card" data-reveal><div class="effect-visual"><img class="effect-image" src="media/effects/wet_skin.png" alt="A subtle, polished wet-skin highlight" loading="lazy" width="512" height="512"></div><div class="effect-copy"><span class="effect-number">04</span><h3>Wet Skin</h3><p>Blend roughness, color and coat for a fresh, dewy look.</p></div></article>
+        <article class="effect-card" data-reveal><div class="effect-visual"><img class="effect-image" src="media/effects/foam.png" alt="A localized foam patch with fine bubbles" loading="lazy" width="512" height="512"></div><div class="effect-copy"><span class="effect-number">05</span><h3>Foam</h3><p>Cover selected areas with foam and optional larger bubbles.</p></div></article>
+        <article class="effect-card" data-reveal><div class="effect-visual"><img class="effect-image" src="media/effects/slime.png" alt="A glossy slime streak following the cheek" loading="lazy" width="512" height="512"></div><div class="effect-copy"><span class="effect-number">06</span><h3>Slime</h3><p>Create a covered area or bind a streak to a guide curve.</p></div></article>
+        <article class="effect-card" data-reveal><div class="effect-visual"><img class="effect-image" src="media/effects/sand.png" alt="Fine grains scattered in a controlled region" loading="lazy" width="512" height="512"></div><div class="effect-copy"><span class="effect-number">07</span><h3>Sand</h3><p>Scatter small sand grains across the skin or a painted area.</p></div></article>
+        <article class="effect-card" data-reveal><div class="effect-visual"><img class="effect-image" src="media/effects/grass.png" alt="Short green blades growing along the skin" loading="lazy" width="512" height="512"></div><div class="effect-copy"><span class="effect-number">08</span><h3>Grass Fragments</h3><p>Add short green blades that follow the surface.</p></div></article>
+        <article class="effect-card" data-reveal><div class="effect-visual"><img class="effect-image" src="media/effects/twigs.png" alt="Small branching twigs attached to the surface" loading="lazy" width="512" height="512"></div><div class="effect-copy"><span class="effect-number">09</span><h3>Twigs</h3><p>Curved, forked natural forms with optional custom assets.</p></div></article>
+        <article class="effect-card" data-reveal><div class="effect-visual"><img class="effect-image" src="media/effects/debris.png" alt="Contrasting debris gathered in small patches" loading="lazy" width="512" height="512"></div><div class="effect-copy"><span class="effect-number">10</span><h3>Debris</h3><p>Scatter small debris pieces. Adjust their amount, size and how closely they gather in groups.</p></div></article>
+        <article class="effect-card effect-card-wide" data-reveal><div class="effect-visual"><img class="effect-image" src="media/effects/flowing_water.png" alt="Guided beads or baked particles tracing a path" loading="lazy" width="512" height="512"></div><div class="effect-copy"><span class="effect-number">11</span><h3>Flowing Water</h3><p>Guide surface flow or bake particles for playback and rendering inside your Blender scene.</p></div></article>
+      </div>
+    </section>
+
+    <section class="coverage-section section-wrap" id="panel-guide" aria-labelledby="coverage-title">
+      <div class="section-index" data-reveal><span>04</span><i></i> CONTROL THE COVERAGE</div>
+      <div class="section-heading" data-reveal><div><div class="eyebrow"><span class="eyebrow-line"></span> One mask workflow, four ways to work</div><h2 id="coverage-title">Choose <em>where the effect appears</em></h2></div><p>Open Where to Apply in the effect panel. A mask controls which areas receive the effect. Start with Whole Object, then try Draw Area when you want more control.</p></div>
+      <div class="coverage-layout">
+        <div class="coverage-options">
+          <article data-reveal><span class="coverage-symbol">01</span><div><h3>Whole Object</h3><p>The easiest starting point: cover the full eligible surface without painting a mask.</p></div></article>
+          <article data-reveal><span class="coverage-symbol">02</span><div><h3>Vertex Group</h3><p>Use a vertex group you already created on the mesh. Its weights control how strongly the effect appears in each area.</p></div></article>
+          <article data-reveal><span class="coverage-symbol">03</span><div><h3>Paint Mask</h3><p>Paint coverage with Blender's Weight Paint tools, then finish the mask in the add-on.</p></div></article>
+          <article data-reveal><span class="coverage-symbol">04</span><div><h3>Draw Area</h3><p>Paint directly on the visible surface with an adjustable brush, falloff and spacing.</p></div></article>
+          <div class="coverage-note" data-reveal><span aria-hidden="true">✳</span><p><b>One mask, multiple layers.</b> Reuse a mask across effects and edit its coverage in one place.</p></div>
+        </div>
+        <figure class="coverage-shot" data-reveal><img src="media/coverage-draw-area.png" alt="Blender Quick Skin Effects panel with Draw Area mask controls visible" loading="lazy" width="1400" height="1000"><figcaption>Draw Area mask controls in the Blender sidebar</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="flow-section" aria-labelledby="flow-title">
+      <div class="section-wrap">
+        <div class="section-index" data-reveal><span>05</span><i></i> A CLOSER LOOK AT FLOWING WATER</div>
+        <div class="flow-layout">
+          <div class="flow-copy" data-reveal><div class="eyebrow"><span class="eyebrow-line"></span> Two motion modes</div><h2 id="flow-title">How <em>Flowing Water</em> works</h2><p>Choose a mode in the Flowing Water panel. Guided Flow moves beads along a curve you create. Surface Flow calculates particle motion on the model and saves it in a baked cache.</p><div class="flow-caveat"><span>GOOD TO KNOW</span><p>Flowing Water is a controllable surface-particle effect, not a full fluid solver. It does not simulate splashes, particle merging or liquid volumes.</p></div></div>
+          <div class="flow-steps" data-reveal>
+            <article><span>01</span><div><h3>Guided Flow: draw a path</h3><p>Create a curve with one Poly spline. Assign it in <b>Guide Curve</b>, click <b>Bind Guide to Skin</b>, adjust <b>Flow Speed</b> and play the timeline.</p></div></article>
+            <article><span>02</span><div><h3>Surface Flow: bake motion</h3><p>Choose <b>Surface Flow</b>, set the start and end frames, then click <b>Bake Surface Flow</b>. Match viewport and render quality and turn off Performance Mode before baking.</p></div></article>
+
+            <div class="flow-tip"><span aria-hidden="true">↗</span><p>For Guided Flow, rebind after changing the guide or mesh structure. For Surface Flow, bake again after changing simulation settings.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="requirements-section" aria-labelledby="requirements-title">
+      <div class="section-wrap requirements-layout">
+        <div data-reveal><div class="section-index"><span>06</span><i></i> BEFORE YOU BEGIN</div><h2 id="requirements-title">Check <em>compatibility</em></h2><p class="requirements-intro">A quick guide to compatibility, model setup and where to find help.</p></div>
+        <div class="requirements-grid" data-reveal>
+          <article><span>BLENDER</span><strong>5.2 or newer</strong><p>This release uses Blender's current Geometry Nodes and add-on APIs.</p></article>
+          <article><span>MESH</span><strong>Keep topology stable</strong><p>Surface attachments rely on a stable mesh. Avoid remeshing or reordering vertices after adding effects.</p></article>
+          <article><span>SHADER EFFECTS</span><strong>Wet Skin &amp; Wrinkles</strong><p>These effects need node-based materials with a direct Principled BSDF to Surface connection in every material slot.</p></article>
+          <article><span>DETAIL QUALITY</span><strong>Check Material Preview</strong><p>Goosebumps shader detail is easiest to judge in Material Preview or Rendered mode. Geometric silhouette detail needs enough mesh resolution.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section section-wrap" id="faq" aria-labelledby="faq-title">
+      <div class="section-index" data-reveal><span>07</span><i></i> QUICK ANSWERS</div>
+      <div class="section-heading" data-reveal><div><div class="eyebrow"><span class="eyebrow-line"></span> Frequently asked</div><h2 id="faq-title">Common <em>questions</em></h2></div><p>Need more detail? The included guide explains masks, effect controls, guides and baking step by step.</p></div>
+      <div class="faq-list" data-reveal>
+        <details><summary>How do I install Quick Skin Effects?<span aria-hidden="true">+</span></summary><p>In Blender, open Edit → Preferences → Add-ons, choose Install from Disk and select the downloaded ZIP without extracting it. Enable the add-on, select a mesh, then open the N-panel and choose Quick Skin Effects.</p></details>
+        <details><summary>Does clicking an effect preview apply it?<span aria-hidden="true">+</span></summary><p>No. The preview opens the effect browser. Choose a look and click Add to put the effect on the selected model.</p></details>
+        <details><summary>Can I combine effects and use one mask for more than one?<span aria-hidden="true">+</span></summary><p>Yes. Effects are separate layers in the stack. Choose an existing mask to let multiple effects share the same coverage; edits to that shared mask update each linked effect.</p></details>
+        <details><summary>Why do Wet Skin or Wrinkles need a particular material setup?<span aria-hidden="true">+</span></summary><p>They blend into the existing skin shader. Each material slot needs a node-based material with a direct Principled BSDF connected to the Material Output Surface.</p></details>
+        <details><summary>Is Flowing Water a complete fluid simulation?<span aria-hidden="true">+</span></summary><p>No. Guided Flow moves beads along a curve; Surface Flow uses a baked particle cache. Neither mode simulates splashes, merging droplets or liquid volumes.</p></details>
+      </div>
+    </section>
+
+    <section class="included-section section-wrap" aria-labelledby="included-title">
+      <div class="included-panel" data-reveal><div class="included-intro"><div class="eyebrow"><span class="eyebrow-line"></span> PRODUCT DETAILS</div><h2 id="included-title">What&#39;s <em>included</em></h2><p>Install once, then work directly in Blender's Quick Skin Effects panel.</p><a class="text-link" href="https://superhivemarket.com/creators/mambacg" target="_blank" rel="noopener">MambaCG on Superhive <span aria-hidden="true">↗</span></a></div><dl class="included-list"><div><dt>Included</dt><dd>Quick Skin Effects add-on · 11 effects · shared masks · presets · user guide</dd></div><div><dt>Compatibility</dt><dd>Blender 5.2 or newer</dd></div><div><dt>License</dt><dd>GPL-3.0-or-later</dd></div><div><dt>Distribution</dt><dd>Install the ZIP directly from Blender Preferences</dd></div></dl></div>
+    </section>
+
+    </main>
+  
+</body>
+</html>
